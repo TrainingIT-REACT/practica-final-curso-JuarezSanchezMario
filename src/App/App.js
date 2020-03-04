@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
+import Home from "../Home/Home";
+import Reproductor from "../Reproductor/Reproductor";
 
 // Css
 import './App.css';
@@ -22,7 +25,7 @@ class App extends Component {
         loading: false,
         albums: json
       }));
-    } catch(err) {
+    } catch (err) {
       console.error("Error accediendo al servidor", err);
     }
   }
@@ -30,30 +33,30 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Plantilla de la práctica final!</h1>
-        <p>
-          Esta plantilla contiene todo lo necesario para comenzar a
-          desarrollar la práctica final. Antes de comenzar a desarrollar,
-          lee la documentación de la práctica y el fichero README.md de
-          este repositorio.
-        </p>
-        <h2>Servidor de desarrollo</h2>
-        <p>
-          El proyecto está preconfigurado con un servidor de desarrollo basado
-          en json-server:
-        </p>
-          { this.state.loading ?
-            <p>Cargando...</p>
-            : <ul>
-              {this.state.albums.map(album => <li key={album.id}>{album.name}</li>)}
-            </ul>
-          }
-        <h2>¿Dudas?</h2>
-        <p>
-          No olvides pasarte por el foro si tienes alguna duda sobre la práctica final
-          o la plantilla :).
-        </p>
-      </div>
+        <Router>
+          <div className="AppContainer">
+            <div className="vistaMenu">
+              <nav>
+                <ul>
+                  <li><NavLink exact activeClassName="active" to="/">Inicio</NavLink></li>
+                  <li><NavLink activeClassName="active" to="/session">Inicio Sesión</NavLink></li>
+                  <li><NavLink activeClassName="active" to="/session">Albums</NavLink></li>
+                  <li><NavLink activeClassName="active" to="/session">Perfil</NavLink></li>
+                </ul>
+              </nav>
+            </div>
+            <div className="vistaCentro">
+              <Route path="/" exact component={Home} />
+              <Route path="/sessio" component={Home} />
+              <Route path="/albums" component={Home} />
+              <Route path="/pefil" component={Home} />
+            </div>
+            <div className="vistaReproductor">
+              <Reproductor />
+            </div>
+          </div>
+        </Router>
+      </div >
     );
   }
 }
