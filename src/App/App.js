@@ -1,26 +1,31 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
+import React, { Component } from "react";
+import { Router, Route } from "react-router-dom";
+import history from "./history";
 import Home from "../Home/Home";
-import Reproductor from "../Reproductor/Reproductor";
+import Albums from "../Albums/Albums";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
+import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 
 // Css
-import './App.css';
+import "./App.css";
 
 class App extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       loading: true,
       albums: []
-    }
+    };
   }
 
   async componentDidMount() {
     try {
-      const res = await fetch('/albums');
+      const res = await fetch("/albums");
       const json = await res.json();
-      this.setState((prevState) => ({
+      this.setState(prevState => ({
         ...prevState,
         loading: false,
         albums: json
@@ -33,30 +38,43 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Router>
-          <div className="AppContainer">
-            <div className="vistaMenu">
-              <nav>
-                <ul>
-                  <li><NavLink exact activeClassName="active" to="/">Inicio</NavLink></li>
-                  <li><NavLink activeClassName="active" to="/session">Inicio Sesión</NavLink></li>
-                  <li><NavLink activeClassName="active" to="/session">Albums</NavLink></li>
-                  <li><NavLink activeClassName="active" to="/session">Perfil</NavLink></li>
-                </ul>
-              </nav>
-            </div>
+        <Router history={history}>
+        <div className="AppContainer">
+          <div className="vistaMenu">
+            <Navbar bg="dark" variant="dark">
+              <Container>
+                <Navbar.Brand
+                  style={{ cursor: "pointer" }}
+                  onClick={() => history.push("/")}
+                >
+                  Spotiphy
+                </Navbar.Brand>
+                <Nav>
+                  <Nav.Link style={{"padding-right":"50px"}} onClick={() => history.push("/")}>Inicio</Nav.Link>
+                  <Nav.Link style={{"padding-right":"50px"}} onClick={() => history.push("/albums")}>
+                    Albums
+                  </Nav.Link>
+                  <Nav.Link style={{"padding-right":"50px"}} onClick={() => console.log("asdasd")}>
+                    Perfil
+                  </Nav.Link>
+                </Nav>
+                <ButtonToolbar>
+                  <Button variant="outline-info" to="/pefil">
+                    Inicio Sesión
+                  </Button>
+                </ButtonToolbar>
+              </Container>
+            </Navbar>
             <div className="vistaCentro">
               <Route path="/" exact component={Home} />
-              <Route path="/sessio" component={Home} />
-              <Route path="/albums" component={Home} />
-              <Route path="/pefil" component={Home} />
+              <Route path="/session" component={Home} />
+              <Route path="/albums" component={Albums} />
+              <Route path="/pefil" component={Albums} />
             </div>
-            <div className="vistaReproductor">
-              <Reproductor />
             </div>
           </div>
         </Router>
-      </div >
+      </div>
     );
   }
 }

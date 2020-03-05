@@ -1,40 +1,21 @@
-.App {
-  height: 100%;
-  width: 100%;
-  position: absolute;
+.vistaMenu {
+  display: inline;
+  background-color: #21252913;
 }
 
 .AppContainer {
-  height: 100%;
-  width: 100%;
+  background-color: #21252913;
+
 }
 .vistaMenu {
-  align-items: center;
-  height: 90vh;
-  background-color: pink;
-  width: 20%;
-  display: inline-block;
-}
 
-.vistaMenu li {
-  padding: 1em;
 }
 .vistaReproductor {
-  border: -2px solid rgb(27, 8, 197);
-  width: 100%;
-  /* bottom: 10px; */
-  /* vertical-align: bottom; */
-  background-color: blue;
-  /* clear: both; */
-  /* width: 80%; */
-  height: 10vh;
-  /* float: left; */
-  display: inline-block;
 }
 .vistaCentro{
-  height: 90vh;
-    width: 80%;
-    background-color: green;
-    display: inline-block;
-    vertical-align: top;
+   margin: 3em auto;
+  max-width: 50em;
+}
+.navigation > *{
+  padding:10%;
 }

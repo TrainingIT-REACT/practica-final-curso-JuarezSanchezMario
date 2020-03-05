@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Albums renders correctly 1`] = `
+<div
+  class="Albums"
+>
+  <header
+    class="Home-header"
+  >
+    <p>
+      Edit 
+      <code>
+        src/Albums.js
+      </code>
+       and save to reload.
+    </p>
+    <a
+      class="Albums-link"
+      href="https://reactjs.org"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Learn React
+    </a>
+  </header>
+</div>
+`;
