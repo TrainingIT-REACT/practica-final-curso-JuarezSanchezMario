@@ -3,53 +3,30 @@ import { combineReducers } from "redux";
 
 
 // Estado inicial
-const initialState = () => ({
-  spotiphy: {
+const initialState = {
+  historico: {
     albums:[],
     songs:[],
   }
-});
-
-const albums = () => {
-  
 };
-const songs = () => {
+export const getAlbums = state => state.historico.albums;
+export const getSongs = state => state.historico.songs;
 
+const albums = (state = initialState.historico.albums, action) => {
+  if(action.type === types.SAVE_ALBUM_HISTORICO){
+    let historico = {albums: [...state,{id:action.album}]};
+    return historico.slice(-5);
+  } else return state;
+};
+const songs = (state = initialState.historico.songs, action) => {
+  let historico = {songs: [...state,{id:action.songs}]};
+  if(action.type === types.SAVE_SONG_HISTORICO){
+    return historico.slice(-5);
+  } else return state;
 };
 
-// Implementamos el reducer
-const reducer = (state = initialState, action) => {
-  switch(action.type) {
-    case types.ADD_TODO:
-      return {
-        list: [
-          ...state.list, {
-            todo: action.todo,
-            complete: false,
-          }
-        ]
-      };
-    case types.COMPLETE_TODO:
-      return {
-        list: [
-          ...state.list.slice(0, action.index),
-          {
-            ...state.list[action.index],
-            complete: true,
-          },
-          ...state.list.slice(action.index + 1)
-        ]
-      }
-    case types.CLEAR_TODOS:
-      return {
-        list: []
-      }
-    default:
-      return state;
-  }
-}
-const reducerCombined = combineReducers({
+const reducerCombinedHistorico = combineReducers({
   albums,
   songs,
 });
-export default reducerCombined;
+export default reducerCombinedHistorico;

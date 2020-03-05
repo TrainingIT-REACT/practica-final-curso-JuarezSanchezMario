@@ -5,12 +5,14 @@ const actions = [
   "FETCH_ALBUMS",
   "LOADING_ALBUMS",
   "LOADED_ALBUMS",
+  "SAVE_ALBUM_HISTORICO",
 
   //SONGS
   "FETCH_SONGS",
   "LOADING_SONGS",
   "LOADED_SONGS",
   "GET_SONGS",
+  "SAVE_ALBUM_SONGS",
 
   // Usuarios
   "UPDATE_NAME"

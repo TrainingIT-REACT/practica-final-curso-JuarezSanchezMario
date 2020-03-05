@@ -3,53 +3,36 @@ import { combineReducers } from "redux";
 
 
 // Estado inicial
-const initialState = () => ({
+const initialState = {
   songs: {
     loading: false,
     songs:[],
   }
-});
-
-const loading = () => {
-  
-};
-const songs = () => {
-
 };
 
-// Implementamos el reducer
-const reducer = (state = initialState, action) => {
-  switch(action.type) {
-    case types.ADD_TODO:
-      return {
-        list: [
-          ...state.list, {
-            todo: action.todo,
-            complete: false,
-          }
-        ]
-      };
-    case types.COMPLETE_TODO:
-      return {
-        list: [
-          ...state.list.slice(0, action.index),
-          {
-            ...state.list[action.index],
-            complete: true,
-          },
-          ...state.list.slice(action.index + 1)
-        ]
-      }
-    case types.CLEAR_TODOS:
-      return {
-        list: []
-      }
-    default:
-      return state;
+export const getLoading = state => state.songs.loading;
+export const getAlbums = state => state.songs.songs;
+
+const songs = (state = initialState.songs.songs, action) => {
+  if(action.type === types.FETCH_SONGS){
+    return action.songs;
+  } else{
+    return state;
   }
-}
-const reducerCombined = combineReducers({
+};
+
+const loading = (state = initialState.songs.loading, action) => {
+  switch (action.type) {
+    case types.LOADING_SONGS:
+      return true
+    case types.LOADED_SONGS:
+      return false
+    default: return state;
+  }
+};
+
+const reducerCombinedSong = combineReducers({
   loading,
   songs,
 });
-export default reducerCombined;
+export default reducerCombinedSong;

@@ -2,8 +2,13 @@ import types from '../actions/types';
 
 // Estado inicial
 const initialState = {
-  name: ""
+  user:{
+    name: "",
+    email: "",
+  }
 }
+
+export const getUser = state => state.user;
 
 // Implementamos el reducer
 const reducer = (state = initialState, action) => {
