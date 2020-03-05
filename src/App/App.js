@@ -21,18 +21,8 @@ class App extends Component {
     };
   }
 
-  async componentDidMount() {
-    try {
-      const res = await fetch("/albums");
-      const json = await res.json();
-      this.setState(prevState => ({
-        ...prevState,
-        loading: false,
-        albums: json
-      }));
-    } catch (err) {
-      console.error("Error accediendo al servidor", err);
-    }
+  componentDidMount() {
+
   }
 
   render() {

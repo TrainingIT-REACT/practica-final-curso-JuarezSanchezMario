@@ -3,8 +3,10 @@ const actions = [
   // ALBUMS
   "GET_ALBUMS",
   "FETCH_ALBUMS",
+  "FETCH_ALBUM",
   "LOADING_ALBUMS",
   "LOADED_ALBUMS",
+  "ERROR_ALBUMS",
   "SAVE_ALBUM_HISTORICO",
 
   //SONGS

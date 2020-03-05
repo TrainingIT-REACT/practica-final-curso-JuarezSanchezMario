@@ -4,13 +4,17 @@ const songsLoading = () => ({
   type: types.LOADING_SONGS
 });
 
+const fetchSongs = () => ({
+  type: types.FETCH_SONGS
+});
+
 const postError = () => ({
   type: types.ERROR_SONGS
 });
 
 const songsLoaded = (posts) => ({
   type: types.LOADED_ALBUMS,
-  posts
+  songs
 })
 
 export const fetchSongs = () => async (dispatch) => {
@@ -18,7 +22,7 @@ export const fetchSongs = () => async (dispatch) => {
   try {
     const res = await fetch('http://localhost:3001/songs');
     const json = await res.json();
-    dispatch(songsLoaded(json));
+    dispatch(fetchSongs(json));
   } catch {
     dispatch(postError());
   }
