@@ -1,4 +1,4 @@
-import types from './types';
+import types from "./types";
 
 const albumLoading = () => ({
   type: types.LOADING_ALBUMS
@@ -6,24 +6,28 @@ const albumLoading = () => ({
 const postError = () => ({
   type: types.ERROR_ALBUMS
 });
-const fetchAlbumType = (albums) => ({
+const fetchAlbumType = albums => ({
   type: types.FETCH_ALBUMS,
   albums
-})
+});
 const albumsLoaded = () => ({
-  type: types.LOADED_ALBUMS,
-})
+  type: types.LOADED_ALBUMS
+});
 const albumLoaded = () => ({
-  type: types.LOADED_ALBUM,
-})
-export const saveAlbumHistorico = (id) => ({
+  type: types.LOADED_ALBUM
+});
+export const saveAlbumHistorico = id => ({
   type: types.LOADED_ALBUMS,
   id
-})
-export const fetchAlbums = () => async (dispatch) => {
+});
+export const savedSelectedAlbum = album => ({
+  type: types.SELECTED_ALBUM,
+  album
+});
+export const fetchAlbums = () => async dispatch => {
   dispatch(albumLoading());
   try {
-    const res = await fetch('http://localhost:3001/albums');
+    const res = await fetch("http://localhost:3001/albums");
     const json = await res.json();
     dispatch(fetchAlbumType(json));
     dispatch(albumsLoaded());
@@ -31,7 +35,7 @@ export const fetchAlbums = () => async (dispatch) => {
     dispatch(postError());
   }
 };
-export const fetchAlbum = (id) => async (dispatch) => {
+export const fetchAlbum = id => async dispatch => {
   dispatch(albumLoading());
   try {
     const res = await fetch(`http://localhost:3001/albums?id=${id}`);
@@ -42,7 +46,7 @@ export const fetchAlbum = (id) => async (dispatch) => {
     dispatch(postError());
   }
 };
-export const fetchFilteredByName = (name) => async (dispatch) => {
+export const fetchFilteredByName = name => async dispatch => {
   dispatch(albumLoading());
   try {
     const res = await fetch(`http://localhost:3001/albums?name_like=${name}`);
@@ -53,15 +57,15 @@ export const fetchFilteredByName = (name) => async (dispatch) => {
     dispatch(postError());
   }
 };
-export const fetchFilteredByArtist = (artist) => async (dispatch) => {
+export const fetchFilteredByArtist = artist => async dispatch => {
   dispatch(albumLoading());
   try {
-    const res = await fetch(`http://localhost:3001/albums?artist_like=${artist}`);
+    const res = await fetch(
+      `http://localhost:3001/albums?artist_like=${artist}`
+    );
     const json = await res.json();
     dispatch(albumLoaded(json));
   } catch {
     dispatch(postError());
   }
 };
-
-

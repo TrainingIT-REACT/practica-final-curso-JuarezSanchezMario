@@ -6,16 +6,25 @@ const initialState = {
   albums: {
     loading: false,
     albums: [],
+    selectedAlbum: {},
     recomendados: []
   }
 };
 export const getLoading = state => state.albums.loading;
 export const getAlbums = state => state.albums.albums;
 export const getRecomendados = state => state.albums.recomendados;
+export const getSelectedAlbum = state => state.albums.selectedAlbum;
 
 const albums = (state = initialState.albums.albums, action) => {
   if (action.type === types.FETCH_ALBUMS) {
     return action.albums;
+  } else {
+    return state;
+  }
+};
+const selectedAlbum = (state = initialState.albums.selectedAlbum, action) => {
+  if (action.type === types.SELECTED_ALBUM) {
+    return action.album;
   } else {
     return state;
   }
@@ -48,6 +57,7 @@ const loading = (state = initialState.albums.loading, action) => {
 const reducerCombinedAlbum = combineReducers({
   albums,
   loading,
-  recomendados
+  recomendados,
+  selectedAlbum
 });
 export default reducerCombinedAlbum;

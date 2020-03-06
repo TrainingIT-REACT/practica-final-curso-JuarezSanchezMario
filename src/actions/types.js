@@ -6,6 +6,7 @@ const actions = [
   "FETCH_ALBUM",
   "LOADING_ALBUMS",
   "LOADED_ALBUMS",
+  "SELECTED_ALBUM",
   "ERROR_ALBUMS",
   "SAVE_ALBUM_HISTORICO",
 

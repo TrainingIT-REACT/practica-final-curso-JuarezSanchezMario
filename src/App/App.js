@@ -3,6 +3,9 @@ import { Router, Route } from "react-router-dom";
 import history from "./history";
 import Home from "../Home/Home";
 import Albums from "../Albums/Albums";
+import { connect } from "react-redux";
+import { fetchAlbums } from "../actions/albums";
+import Album from "../Albums/Album";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
@@ -22,45 +25,57 @@ class App extends Component {
   }
 
   componentDidMount() {
-
+    this.props.displayFetchAlbums();
   }
 
   render() {
     return (
       <div className="App">
         <Router history={history}>
-        <div className="AppContainer">
-          <div className="vistaMenu">
-            <Navbar bg="dark" variant="dark">
-              <Container>
-                <Navbar.Brand
-                  style={{ cursor: "pointer" }}
-                  onClick={() => history.push("/")}
-                >
-                  Spotiphy
-                </Navbar.Brand>
-                <Nav>
-                  <Nav.Link style={{"padding-right":"50px"}} onClick={() => history.push("/")}>Inicio</Nav.Link>
-                  <Nav.Link style={{"padding-right":"50px"}} onClick={() => history.push("/albums")}>
-                    Albums
-                  </Nav.Link>
-                  <Nav.Link style={{"padding-right":"50px"}} onClick={() => console.log("asdasd")}>
-                    Perfil
-                  </Nav.Link>
-                </Nav>
-                <ButtonToolbar>
-                  <Button variant="outline-info" to="/pefil">
-                    Inicio Sesión
-                  </Button>
-                </ButtonToolbar>
-              </Container>
-            </Navbar>
-            <div className="vistaCentro">
-              <Route path="/" exact component={Home} />
-              <Route path="/session" component={Home} />
-              <Route path="/albums" component={Albums} />
-              <Route path="/pefil" component={Albums} />
-            </div>
+          <div className="AppContainer">
+            <div className="vistaMenu">
+              <Navbar bg="dark" variant="dark">
+                <Container>
+                  <Navbar.Brand
+                    style={{ cursor: "pointer" }}
+                    onClick={() => history.push("/")}
+                  >
+                    Spotiphy
+                  </Navbar.Brand>
+                  <Nav>
+                    <Nav.Link
+                      style={{ "padding-right": "50px" }}
+                      onClick={() => history.push("/")}
+                    >
+                      Inicio
+                    </Nav.Link>
+                    <Nav.Link
+                      style={{ "padding-right": "50px" }}
+                      onClick={() => history.push("/albums")}
+                    >
+                      Albums
+                    </Nav.Link>
+                    <Nav.Link
+                      style={{ "padding-right": "50px" }}
+                      onClick={() => history.push("/album")}
+                    >
+                      Perfil
+                    </Nav.Link>
+                  </Nav>
+                  <ButtonToolbar>
+                    <Button variant="outline-info" to="/pefil">
+                      Inicio Sesión
+                    </Button>
+                  </ButtonToolbar>
+                </Container>
+              </Navbar>
+              <div className="vistaCentro">
+                <Route path="/" exact component={Home} />
+                <Route path="/session" component={Home} />
+                <Route path="/albums" component={Albums} />
+                <Route path="/album" component={Album} />
+                <Route path="/pefil" component={Albums} />
+              </div>
             </div>
           </div>
         </Router>
@@ -68,5 +83,14 @@ class App extends Component {
     );
   }
 }
+const mapStateToProps = (state) => ({
+  ...state
+});
+const mapDispatchToProps = dispatch => ({
+  displayFetchAlbums: () => dispatch(fetchAlbums()),
+});
 
-export default App;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);

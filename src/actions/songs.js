@@ -4,17 +4,19 @@ const songsLoading = () => ({
   type: types.LOADING_SONGS
 });
 
-const fetchSongs = () => ({
+const fetchSongsType = (songs) => ({
+  type: types.FETCH_SONGS,
+  songs
+});
+const fetchSongType = () => ({
   type: types.FETCH_SONGS
 });
-
 const postError = () => ({
   type: types.ERROR_SONGS
 });
 
-const songsLoaded = (posts) => ({
-  type: types.LOADED_ALBUMS,
-  songs
+const songsLoaded = () => ({
+  type: types.LOADED_SONGS,
 })
 
 export const fetchSongs = () => async (dispatch) => {
@@ -22,18 +24,20 @@ export const fetchSongs = () => async (dispatch) => {
   try {
     const res = await fetch('http://localhost:3001/songs');
     const json = await res.json();
-    dispatch(fetchSongs(json));
+    dispatch(fetchSongsType(json));
+    dispatch(songsLoaded());
   } catch {
     dispatch(postError());
   }
 };
 
-export const fetchByAlbum = (id) => async (dispatch,id) => {
+export const fetchByAlbum = (id) => async (dispatch) => {
   dispatch(songsLoading());
   try {
     const res = await fetch(`http://localhost:3001/songs?album_id=${id}`);
     const json = await res.json();
-    dispatch(songsLoaded(json));
+    dispatch(fetchSongsType(json));
+    dispatch(songsLoaded());
   } catch {
     dispatch(postError());
   }

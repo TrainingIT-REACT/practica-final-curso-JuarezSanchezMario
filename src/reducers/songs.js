@@ -11,7 +11,7 @@ const initialState = {
 };
 
 export const getLoading = state => state.songs.loading;
-export const getAlbums = state => state.songs.songs;
+export const getSongs = state => state.songs.songs;
 
 const songs = (state = initialState.songs.songs, action) => {
   if(action.type === types.FETCH_SONGS){
