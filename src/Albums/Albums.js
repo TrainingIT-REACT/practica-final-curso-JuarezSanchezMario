@@ -22,6 +22,8 @@ class Albums extends Component {
 
     this.state = {
       lastSearch: "",
+      artista:false,
+      nombre:true,
     };
   }
 
@@ -31,12 +33,13 @@ class Albums extends Component {
     const form = event.currentTarget;
     event.preventDefault();
     event.stopPropagation();
-    if(form.formHorizontalRadios2.checked){
+    if (form.formHorizontalRadios2.checked) {
       props.fetchByArits(form.search.value);
     } else {
       props.fetchByName(form.search.value);
     }
-    this.setState({lastSearch:form.search.value});
+    this.setState({ lastSearch: form.search.value });
+    console.log(event);
   }
 
   render() {
@@ -45,31 +48,37 @@ class Albums extends Component {
     }
     return (
       <div className="Albums">
-        <Form
-          onSubmit={event => this.handleSubmit(event, this.props)}
-        >
+        <Form onSubmit={event => this.handleSubmit(event, this.props)}>
           <Form.Group controlId="search">
-            <Form.Control type="text" placeholder="Buscar" defaultValue={this.state.lastSearch}/>
+            <Form.Control
+              type="text"
+              placeholder="Buscar"
+              defaultValue={this.state.lastSearch}
+            />
           </Form.Group>
           <Button variant="primary" type={"submit"}>
             Buscar
           </Button>
-            <Form.Group>
-                <Form.Check
-                  type="radio"
-                  custom
-                  label="Por nombre"
-                  name="formHorizontalRadios"
-                  id="formHorizontalRadios1"
-                />
-                <Form.Check
-                  type="radio"
-                  custom
-                  label="Por artista"
-                  name="formHorizontalRadios"
-                  id="formHorizontalRadios2"
-                />
-            </Form.Group>
+          <Form.Group>
+            <Form.Check
+              onClick={() => this.setState({nombre: true,artista:false})}
+              type="radio"
+              custom
+              checked={this.state.nombre}
+              label="Por nombre"
+              name="formHorizontalRadios"
+              id="formHorizontalRadios1"
+            />
+            <Form.Check
+              type="radio"
+              custom
+              onClick={() => this.setState({artista: true,nombre:false})}
+              checked={this.state.artista}
+              label="Por artista"
+              name="formHorizontalRadios"
+              id="formHorizontalRadios2"
+            />
+          </Form.Group>
         </Form>
         <Badge variant="secondary">Albums</Badge>
         <CardColumns>

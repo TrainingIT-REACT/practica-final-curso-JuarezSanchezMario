@@ -1,6 +1,9 @@
 import types from './types';
 
-export const updateName = (name) => ({
-  type: types.UPDATE_NAME,
-  name
+export const updateUser = (user) => ({
+  type: types.UPDATE_USER,
+  user
+});
+export const deleteUser = () => ({
+  type: types.DELETE_USER,
 });

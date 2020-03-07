@@ -1,26 +1,26 @@
-import types from '../actions/types';
+import types from "../actions/types";
 
 // Estado inicial
 const initialState = {
-  user:{
+  user: {
     name: "",
     email: "",
-    logged: false,
+    logged: false
   }
-}
+};
 
 export const getUser = state => state.user;
 
 // Implementamos el reducer
 const reducer = (state = initialState, action) => {
-  switch(action.type) {
-    case types.UPDATE_NAME:
-      return {
-        name: action.name
-      };
+  switch (action.type) {
+    case types.UPDATE_USER:
+      return { name: action.user.name, email: action.user.name, logged: true };
+    case types.DELETE_USER:
+      return { name: "", email: "", logged: false };
     default:
       return state;
   }
-}
+};
 
 export default reducer;

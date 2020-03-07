@@ -20,7 +20,8 @@ const actions = [
 
 
   // Usuarios
-  "UPDATE_NAME"
+  "UPDATE_USER",
+  "DELETE_USER"
 ];
 
 // Las convertimos en un objeto

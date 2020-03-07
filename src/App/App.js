@@ -24,8 +24,6 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: true,
-      albums: []
     };
   }
 
@@ -68,8 +66,19 @@ class App extends Component {
                     </Nav.Link>
                   </Nav>
                   <ButtonToolbar>
-                    <Button variant={this.props.user.logged ? "info" : "outline-info"} to="/session">
-                      {this.props.user.logged ? "Cerrar Sesión" : "Inicio Sesión"}
+                    <Button
+                      variant={this.props.user.logged ? "info" : "outline-info"}
+                      onClick={() => {
+                        if (this.props.user.logged) {
+                          history.push("/perfil");
+                        } else {
+                          history.push("/session");
+                        }
+                      }}
+                    >
+                      {this.props.user.logged
+                        ? "Cerrar Sesión"
+                        : "Inicio Sesión"}
                     </Button>
                   </ButtonToolbar>
                 </Container>
@@ -79,7 +88,7 @@ class App extends Component {
                 <Route path="/session" component={Session} />
                 <Route path="/albums" component={Albums} />
                 <Route path="/album" component={Album} />
-                <Route path="/pefil" component={Perfil} />
+                <Route path="/perfil" component={Perfil} />
               </div>
             </div>
           </div>
@@ -95,7 +104,7 @@ const mapDispatchToProps = dispatch => ({
 
 export default connect(
   state => ({
-    user: getUser(state),
+    user: getUser(state)
   }),
   mapDispatchToProps
 )(App);
