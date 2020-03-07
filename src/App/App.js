@@ -3,6 +3,7 @@ import { Router, Route } from "react-router-dom";
 import history from "./history";
 import { connect } from "react-redux";
 import { fetchAlbums } from "../actions/albums";
+import { deleteUser } from "../actions/user";
 /*Componentes*/
 import Album from "../Albums/Album";
 import Albums from "../Albums/Albums";
@@ -14,6 +15,7 @@ import { getUser } from "../reducers/user";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
+import Badge from "react-bootstrap/Badge";
 import Button from "react-bootstrap/Button";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 
@@ -23,8 +25,7 @@ import "./App.css";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-    };
+    this.state = {};
   }
 
   componentDidMount() {
@@ -70,7 +71,7 @@ class App extends Component {
                       variant={this.props.user.logged ? "info" : "outline-info"}
                       onClick={() => {
                         if (this.props.user.logged) {
-                          history.push("/perfil");
+                          this.props.deleteUser();
                         } else {
                           history.push("/session");
                         }
@@ -82,6 +83,16 @@ class App extends Component {
                     </Button>
                   </ButtonToolbar>
                 </Container>
+                {this.props.user.logged ? (
+                  <Badge
+                    style={{ cursor: "pointer" }}
+                    pill
+                    variant="primary"
+                    onClick={() => history.push("/perfil")}
+                  >
+                    {this.props.user.name} {this.props.user.email}
+                  </Badge>
+                ) : null}
               </Navbar>
               <div className="vistaCentro">
                 <Route path="/" exact component={Home} />
@@ -99,7 +110,8 @@ class App extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  displayFetchAlbums: () => dispatch(fetchAlbums())
+  displayFetchAlbums: () => dispatch(fetchAlbums()),
+  deleteUser: () => dispatch(deleteUser())
 });
 
 export default connect(

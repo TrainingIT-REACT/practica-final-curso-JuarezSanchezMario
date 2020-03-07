@@ -15,7 +15,8 @@ export const getUser = state => state.user;
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case types.UPDATE_USER:
-      return { name: action.user.name, email: action.user.name, logged: true };
+      console.log(action)
+      return { name: action.user.user.name, email:  action.user.user.email, logged: true };
     case types.DELETE_USER:
       return { name: "", email: "", logged: false };
     default:

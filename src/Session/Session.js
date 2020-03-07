@@ -15,7 +15,7 @@ class Session extends Component {
     super(props);
 
     this.state = {
-      toastVisibility: true,
+      toastVisibility: true
     };
   }
 
@@ -25,7 +25,8 @@ class Session extends Component {
     const form = event.currentTarget;
     event.preventDefault();
     event.stopPropagation();
-    props.dispatchUser(form.name.value, form.email.value);
+    const user =  {user: { name: form.name.value, email: form.email.value }};
+    props.dispatchUser(user);
   }
 
   render() {
@@ -53,8 +54,8 @@ class Session extends Component {
         this.props.location.state.from &&
         this.props.location.state.from === "perfil" ? (
           <Toast
-          show={this.state.toastVisibility}
-          onClose={() => this.setState({toastVisibility: false})}
+            show={this.state.toastVisibility}
+            onClose={() => this.setState({ toastVisibility: false })}
             style={{
               position: "absolute",
               top: 70,
@@ -62,11 +63,7 @@ class Session extends Component {
             }}
           >
             <Toast.Header>
-              <img
-                src="./spotiphya.png"
-                className="rounded mr-2"
-                alt=""
-              />
+              <img src="./spotiphya.png" className="rounded mr-2" alt="" />
               <strong className="mr-auto">Spotiphy</strong>
             </Toast.Header>
             <Toast.Body>

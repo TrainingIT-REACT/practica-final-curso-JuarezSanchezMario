@@ -13,10 +13,6 @@ const fetchAlbumType = albums => ({
 const albumsLoaded = () => ({
   type: types.LOADED_ALBUMS
 });
-export const saveAlbumHistorico = album => ({
-  type: types.LOADED_ALBUMS,
-  album
-});
 export const savedSelectedAlbum = album => ({
   type: types.SELECTED_ALBUM,
   album
