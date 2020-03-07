@@ -30,7 +30,7 @@ const selectedAlbum = (state = initialState.albums.selectedAlbum, action) => {
   }
 };
 const recomendados = (state = initialState.albums.recomendados, action) => {
-  if (state.length > 0 && action.type === types.FETCH_ALBUMS) {
+  if (!state.length > 0 && action.type === types.FETCH_ALBUMS) {
     const n = 5;
     const sample = action.albums
       .map(x => ({ x, r: Math.random() }))

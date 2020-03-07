@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getSongs } from "../reducers/songs";
-import { fetchByAlbum } from "../actions/songs";
+import { getSongs, getLoading } from "../reducers/songs";
+import { fetchByAlbum, saveSongHistorico } from "../actions/songs";
 import { getSelectedAlbum } from "../reducers/albums";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
@@ -11,6 +11,7 @@ import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Spinner from "../utils/spinner.jsx";
 
 // Css
 import "./Albums.css";
@@ -24,7 +25,7 @@ class Album extends Component {
         source: {},
         id: {},
         last: false
-      }
+      },
     };
   }
 
@@ -33,7 +34,10 @@ class Album extends Component {
   }
 
   render() {
-    const ponerCancion = (source, id) => {
+    if(this.props.loading){
+      return <Spinner/>
+    }
+    const ponerCancion = item => {
       this.setState(
         {
           selectedSong: {
@@ -43,25 +47,25 @@ class Album extends Component {
         () =>
           this.setState({
             selectedSong: {
-              source: source,
-              id: id,
+              source: item.audio,
+              id: item.id,
               last:
-                id === this.props.songs[this.props.songs.length - 1].id
+                item.id === this.props.songs[this.props.songs.length - 1].id
                   ? true
                   : false
             }
           })
       );
+      this.props.saveSong(item);
     };
-
-    if (!this.props.songs.length) {
-      return "nope";
+    if(!Object.keys(this.props.selectedAlbum).length){
+      return("Ups no hay nada que mostrar");
     }
     return (
       <div className="Albums">
-        <Container style={{ "text-align": "-webkit-center" }}>
+        <Container style={{ maxWidth: "100%", textAalign: "-webkit-center" }}>
           <Row>
-            <Col>
+            <Col lg="true">
               <Card style={{ width: "18rem" }}>
                 <Card.Img variant="top" src={this.props.selectedAlbum.cover} />
                 <Card.Body>
@@ -80,7 +84,7 @@ class Album extends Component {
               </Card>
               <Row>
                 <AudioPlayer
-                className="player"
+                  className="player"
                   autoPlay={this.state.selectedSong.source.length}
                   src={
                     this.state.selectedSong.source.length &&
@@ -93,19 +97,20 @@ class Album extends Component {
                       const song = this.props.songs.find(
                         item => item.id === this.state.selectedSong.id + 1
                       );
-                      ponerCancion(song.audio, song.id);
+                      ponerCancion(song);
                     }
                   }}
                 />
               </Row>
             </Col>
-            <Col>
-              <Row style={{ "margin-left": "10%" }}>
+            <Col lg="true">
+              <Row style={{ marginLeft: "10%" }}>Pulsa para reproducir!</Row>
+              <Row style={{ marginLeft: "10%" }}>
                 <Card style={{ width: "18rem" }}>
                   <ListGroup className="list-group-flush">
                     {this.props.songs.map(item => (
                       <ListGroupItem
-                        onClick={() => ponerCancion(item.audio, item.id)}
+                        onClick={() => ponerCancion(item)}
                         style={{
                           cursor: "pointer",
                           background:
@@ -139,13 +144,15 @@ class Album extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  fetchSongs: id => dispatch(fetchByAlbum(id))
+  fetchSongs: id => dispatch(fetchByAlbum(id)),
+  saveSong: song => dispatch(saveSongHistorico(song))
 });
 
 export default connect(
   state => ({
     songs: getSongs(state),
-    selectedAlbum: getSelectedAlbum(state)
+    selectedAlbum: getSelectedAlbum(state),
+    loading: getLoading(state)
   }),
   mapDispatchToProps
 )(Album);

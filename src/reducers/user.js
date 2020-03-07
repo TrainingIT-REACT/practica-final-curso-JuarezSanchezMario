@@ -5,6 +5,7 @@ const initialState = {
   user:{
     name: "",
     email: "",
+    logged: false,
   }
 }
 

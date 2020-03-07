@@ -13,12 +13,9 @@ const fetchAlbumType = albums => ({
 const albumsLoaded = () => ({
   type: types.LOADED_ALBUMS
 });
-const albumLoaded = () => ({
-  type: types.LOADED_ALBUM
-});
-export const saveAlbumHistorico = id => ({
+export const saveAlbumHistorico = album => ({
   type: types.LOADED_ALBUMS,
-  id
+  album
 });
 export const savedSelectedAlbum = album => ({
   type: types.SELECTED_ALBUM,
@@ -31,8 +28,10 @@ export const fetchAlbums = () => async dispatch => {
     const json = await res.json();
     dispatch(fetchAlbumType(json));
     dispatch(albumsLoaded());
-  } catch {
+  } catch(e){
+    console.log(e);
     dispatch(postError());
+    dispatch(albumsLoaded());
   }
 };
 export const fetchAlbum = id => async dispatch => {
@@ -42,8 +41,10 @@ export const fetchAlbum = id => async dispatch => {
     const json = await res.json();
     dispatch(fetchAlbumType(json));
     dispatch(albumsLoaded());
-  } catch {
+  } catch(e) {
+    console.log(e);
     dispatch(postError());
+    dispatch(albumsLoaded());
   }
 };
 export const fetchFilteredByName = name => async dispatch => {
@@ -52,9 +53,11 @@ export const fetchFilteredByName = name => async dispatch => {
     const res = await fetch(`http://localhost:3001/albums?name_like=${name}`);
     const json = await res.json();
     dispatch(fetchAlbumType(json));
-    dispatch(albumLoaded());
-  } catch {
+    dispatch(albumsLoaded());
+  } catch(e) {
+    console.log(e);
     dispatch(postError());
+    dispatch(albumsLoaded());
   }
 };
 export const fetchFilteredByArtist = artist => async dispatch => {
@@ -64,8 +67,11 @@ export const fetchFilteredByArtist = artist => async dispatch => {
       `http://localhost:3001/albums?artist_like=${artist}`
     );
     const json = await res.json();
-    dispatch(albumLoaded(json));
-  } catch {
+    dispatch(fetchAlbumType(json));
+    dispatch(albumsLoaded());
+  } catch(e) {
+    console.log(e);
     dispatch(postError());
+    dispatch(albumsLoaded());
   }
 };

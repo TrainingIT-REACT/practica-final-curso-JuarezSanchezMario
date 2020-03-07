@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders correctly 1`] = `
+<div
+  class="Session"
+>
+  <header
+    class="Session-header"
+  >
+    <p>
+      Edit 
+      <code>
+        src/Session.js
+      </code>
+       and save to reload.
+    </p>
+    <a
+      class="Session-link"
+      href="https://reactjs.org"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Learn React
+    </a>
+  </header>
+</div>
+`;

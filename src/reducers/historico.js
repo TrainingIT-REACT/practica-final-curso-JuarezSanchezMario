@@ -14,12 +14,12 @@ export const getSongs = state => state.historico.songs;
 
 const albums = (state = initialState.historico.albums, action) => {
   if(action.type === types.SAVE_ALBUM_HISTORICO){
-    let historico = {albums: [...state,{id:action.album}]};
+    let historico = [...state,action.song];
     return historico.slice(-5);
   } else return state;
 };
 const songs = (state = initialState.historico.songs, action) => {
-  let historico = {songs: [...state,{id:action.songs}]};
+  let historico = [...state,action.song];
   if(action.type === types.SAVE_SONG_HISTORICO){
     return historico.slice(-5);
   } else return state;

@@ -6,3 +6,7 @@
 /*.App h1 {
   text-align: center;
 }*/
+
+.player rhap_button-clear rhap_main-controls-button rhap_play-pause-button{
+     vertical-align: none;
+}

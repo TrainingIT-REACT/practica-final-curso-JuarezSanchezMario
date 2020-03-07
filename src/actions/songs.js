@@ -8,8 +8,9 @@ const fetchSongsType = (songs) => ({
   type: types.FETCH_SONGS,
   songs
 });
-const fetchSongType = () => ({
-  type: types.FETCH_SONGS
+export const saveSongHistorico = song => ({
+  type: types.SAVE_SONG_HISTORICO,
+  song
 });
 const postError = () => ({
   type: types.ERROR_SONGS

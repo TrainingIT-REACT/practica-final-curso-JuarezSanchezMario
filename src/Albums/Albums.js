@@ -1,9 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getAlbums } from "../reducers/albums";
-import { savedSelectedAlbum } from "../actions/albums";
+import { getAlbums, getLoading } from "../reducers/albums";
+import {
+  savedSelectedAlbum,
+  fetchFilteredByName,
+  fetchFilteredByArtist
+} from "../actions/albums";
 import Card from "react-bootstrap/Card";
 import CardColumns from "react-bootstrap/CardColumns";
+import Spinner from "../utils/spinner.jsx";
+import Badge from "react-bootstrap/Badge";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 // Css
 import "./Albums.css";
@@ -13,18 +21,57 @@ class Albums extends Component {
     super(props);
 
     this.state = {
-      loading: true,
-      albums: []
+      lastSearch: "",
     };
   }
 
-  componentDidMount() {
-    
+  componentDidMount() {}
+
+  handleSubmit(event, props) {
+    const form = event.currentTarget;
+    event.preventDefault();
+    event.stopPropagation();
+    if(form.formHorizontalRadios2.checked){
+      props.fetchByArits(form.search.value);
+    } else {
+      props.fetchByName(form.search.value);
+    }
+    this.setState({lastSearch:form.search.value});
   }
 
   render() {
+    if (this.props.loading) {
+      return <Spinner />;
+    }
     return (
       <div className="Albums">
+        <Form
+          onSubmit={event => this.handleSubmit(event, this.props)}
+        >
+          <Form.Group controlId="search">
+            <Form.Control type="text" placeholder="Buscar" defaultValue={this.state.lastSearch}/>
+          </Form.Group>
+          <Button variant="primary" type={"submit"}>
+            Buscar
+          </Button>
+            <Form.Group>
+                <Form.Check
+                  type="radio"
+                  custom
+                  label="Por nombre"
+                  name="formHorizontalRadios"
+                  id="formHorizontalRadios1"
+                />
+                <Form.Check
+                  type="radio"
+                  custom
+                  label="Por artista"
+                  name="formHorizontalRadios"
+                  id="formHorizontalRadios2"
+                />
+            </Form.Group>
+        </Form>
+        <Badge variant="secondary">Albums</Badge>
         <CardColumns>
           {this.props.albums.map(item => (
             <Card
@@ -48,12 +95,15 @@ class Albums extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  dispatchSelectedAlbum: album => dispatch(savedSelectedAlbum(album))
+  dispatchSelectedAlbum: album => dispatch(savedSelectedAlbum(album)),
+  fetchByName: string => dispatch(fetchFilteredByName(string)),
+  fetchByArits: string => dispatch(fetchFilteredByArtist(string))
 });
 
 export default connect(
   state => ({
-    albums: getAlbums(state)
+    albums: getAlbums(state),
+    loading: getLoading(state)
   }),
   mapDispatchToProps
 )(Albums);

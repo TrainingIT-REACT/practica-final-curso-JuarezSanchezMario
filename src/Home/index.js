@@ -1,2 +1,2 @@
-import Home from './App';
+import Home from './Home';
 export default Home;

@@ -1,11 +1,16 @@
 import React, { Component } from "react";
 import { Router, Route } from "react-router-dom";
 import history from "./history";
-import Home from "../Home/Home";
-import Albums from "../Albums/Albums";
 import { connect } from "react-redux";
 import { fetchAlbums } from "../actions/albums";
+/*Componentes*/
 import Album from "../Albums/Album";
+import Albums from "../Albums/Albums";
+import Home from "../Home/Home";
+import Perfil from "../Perfil/Perfil";
+import Session from "../Session/Session";
+/***/
+import { getUser } from "../reducers/user";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
@@ -57,24 +62,24 @@ class App extends Component {
                     </Nav.Link>
                     <Nav.Link
                       style={{ "padding-right": "50px" }}
-                      onClick={() => history.push("/album")}
+                      onClick={() => history.push("/perfil")}
                     >
                       Perfil
                     </Nav.Link>
                   </Nav>
                   <ButtonToolbar>
-                    <Button variant="outline-info" to="/pefil">
-                      Inicio Sesión
+                    <Button variant={this.props.user.logged ? "info" : "outline-info"} to="/session">
+                      {this.props.user.logged ? "Cerrar Sesión" : "Inicio Sesión"}
                     </Button>
                   </ButtonToolbar>
                 </Container>
               </Navbar>
               <div className="vistaCentro">
                 <Route path="/" exact component={Home} />
-                <Route path="/session" component={Home} />
+                <Route path="/session" component={Session} />
                 <Route path="/albums" component={Albums} />
                 <Route path="/album" component={Album} />
-                <Route path="/pefil" component={Albums} />
+                <Route path="/pefil" component={Perfil} />
               </div>
             </div>
           </div>
@@ -83,14 +88,14 @@ class App extends Component {
     );
   }
 }
-const mapStateToProps = (state) => ({
-  ...state
-});
+
 const mapDispatchToProps = dispatch => ({
-  displayFetchAlbums: () => dispatch(fetchAlbums()),
+  displayFetchAlbums: () => dispatch(fetchAlbums())
 });
 
 export default connect(
-  mapStateToProps,
+  state => ({
+    user: getUser(state),
+  }),
   mapDispatchToProps
 )(App);

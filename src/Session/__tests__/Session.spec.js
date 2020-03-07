@@ -2,11 +2,11 @@ import React from 'react';
 import { render } from 'enzyme';
 
 // Componente
-import Home from '../Reproductor';
+import Session from '../Session';
 
-describe(Home, () => {
+describe(Session, () => {
   it('renders correctly', () => {
-    const wrapper = render(<Home />);
+    const wrapper = render(<Session />);
     expect(wrapper).toMatchSnapshot();
   });
 })

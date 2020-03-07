@@ -16,6 +16,8 @@ const actions = [
   "LOADED_SONGS",
   "GET_SONGS",
   "SAVE_ALBUM_SONGS",
+  "SAVE_SONG_HISTORICO",
+
 
   // Usuarios
   "UPDATE_NAME"
