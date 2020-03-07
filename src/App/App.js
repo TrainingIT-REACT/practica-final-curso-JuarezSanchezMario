@@ -4,13 +4,6 @@ import history from "./history";
 import { connect } from "react-redux";
 import { fetchAlbums } from "../actions/albums";
 import { deleteUser } from "../actions/user";
-/*Componentes*/
-import Album from "../Albums/Album";
-import Albums from "../Albums/Albums";
-import Home from "../Home/Home";
-import Perfil from "../Perfil/Perfil";
-import Session from "../Session/Session";
-/***/
 import { getUser } from "../reducers/user";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -18,9 +11,15 @@ import Container from "react-bootstrap/Container";
 import Badge from "react-bootstrap/Badge";
 import Button from "react-bootstrap/Button";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
+import "./App.css";
+
+const Home = React.lazy(() => import("../Home/Home.jsx"));
+const Album = React.lazy(() => import("../Albums/Album.jsx"));
+const Albums = React.lazy(() => import("../Albums/Albums.jsx"));
+const Perfil = React.lazy(() => import("../Perfil/Perfil.jsx"));
+const Session = React.lazy(() => import("../Session/Session.jsx"));
 
 // Css
-import "./App.css";
 
 class App extends Component {
   constructor(props) {
@@ -35,75 +34,89 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Router history={history}>
-          <div className="AppContainer">
-            <div className="vistaMenu">
-              <Navbar bg="dark" variant="dark">
-                <Container>
-                  <Navbar.Brand
-                    style={{ cursor: "pointer" }}
-                    onClick={() => history.push("/")}
-                  >
-                    Spotiphy
-                  </Navbar.Brand>
-                  <Nav>
-                    <Nav.Link
-                      style={{ "padding-right": "50px" }}
+        <React.Suspense fallback="loading...">
+          <Router history={history}>
+            <div className="AppContainer">
+              <div className="vistaMenu">
+                <Navbar bg="dark" variant="dark">
+                  <Container>
+                    <Navbar.Brand
+                      style={{ cursor: "pointer", color: "#ffefefd1" }}
                       onClick={() => history.push("/")}
                     >
-                      Inicio
-                    </Nav.Link>
-                    <Nav.Link
-                      style={{ "padding-right": "50px" }}
-                      onClick={() => history.push("/albums")}
-                    >
-                      Albums
-                    </Nav.Link>
-                    <Nav.Link
-                      style={{ "padding-right": "50px" }}
+                      Spotiphy
+                    </Navbar.Brand>
+                    <Nav>
+                      <Nav.Link
+                        style={{ paddingRight: "50px", color: "#ffefefd1" }}
+                        onClick={() => history.push("/")}
+                      >
+                        Inicio
+                      </Nav.Link>
+                      <Nav.Link
+                        style={{ paddingRight: "50px", color: "#ffefefd1" }}
+                        onClick={() => history.push("/albums")}
+                      >
+                        Albums
+                      </Nav.Link>
+                      <Nav.Link
+                        style={{ paddingRight: "50px", color: "#ffefefd1" }}
+                        onClick={() => history.push("/perfil")}
+                      >
+                        Perfil
+                      </Nav.Link>
+                    </Nav>
+                    <ButtonToolbar>
+                      <Button
+                        variant={
+                          this.props.user.logged ? "info" : "outline-info"
+                        }
+                        onClick={() => {
+                          if (this.props.user.logged) {
+                            this.props.deleteUser();
+                          } else {
+                            history.push("/session");
+                          }
+                        }}
+                      >
+                        {this.props.user.logged
+                          ? "Cerrar Sesión"
+                          : "Inicio Sesión"}
+                      </Button>
+                    </ButtonToolbar>
+                  </Container>
+                  {this.props.user.logged ? (
+                    <Badge
+                      style={{ cursor: "pointer" }}
+                      pill
+                      variant="primary"
                       onClick={() => history.push("/perfil")}
                     >
-                      Perfil
-                    </Nav.Link>
-                  </Nav>
-                  <ButtonToolbar>
-                    <Button
-                      variant={this.props.user.logged ? "info" : "outline-info"}
-                      onClick={() => {
-                        if (this.props.user.logged) {
-                          this.props.deleteUser();
-                        } else {
-                          history.push("/session");
-                        }
-                      }}
-                    >
-                      {this.props.user.logged
-                        ? "Cerrar Sesión"
-                        : "Inicio Sesión"}
-                    </Button>
-                  </ButtonToolbar>
-                </Container>
-                {this.props.user.logged ? (
-                  <Badge
-                    style={{ cursor: "pointer" }}
-                    pill
-                    variant="primary"
-                    onClick={() => history.push("/perfil")}
-                  >
-                    {this.props.user.name} {this.props.user.email}
-                  </Badge>
-                ) : null}
-              </Navbar>
-              <div className="vistaCentro">
-                <Route path="/" exact component={Home} />
-                <Route path="/session" component={Session} />
-                <Route path="/albums" component={Albums} />
-                <Route path="/album" component={Album} />
-                <Route path="/perfil" component={Perfil} />
+                      {this.props.user.name} {this.props.user.email}
+                    </Badge>
+                  ) : null}
+                </Navbar>
+                <div className="vistaCentro">
+                  <React.Suspense fallback="loading Home...">
+                    <Route path="/" exact component={Home} />
+                  </React.Suspense>
+                  <React.Suspense fallback="loading Session...">
+                    <Route path="/session" component={Session} />
+                  </React.Suspense>
+                  <React.Suspense fallback="loading Albums...">
+                    <Route path="/albums" component={Albums} />
+                  </React.Suspense>
+                  <React.Suspense fallback="loading Album...">
+                    <Route path="/album" component={Album} />
+                  </React.Suspense>
+                  <React.Suspense fallback="loading Perfil...">
+                    <Route path="/perfil" component={Perfil} />
+                  </React.Suspense>
+                </div>
               </div>
             </div>
-          </div>
-        </Router>
+          </Router>
+        </React.Suspense>
       </div>
     );
   }

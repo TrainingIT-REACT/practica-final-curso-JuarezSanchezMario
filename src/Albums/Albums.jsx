@@ -90,7 +90,7 @@ class Albums extends Component {
                 this.props.history.push("/album");
               }}
             >
-              <Card.Img variant="top" src={item.cover} />
+              <Card.Img alt="No image" variant="top" src={item.cover} />
               <Card.Body>
                 <Card.Title>{item.name}</Card.Title>
                 <Card.Text>{item.artist}</Card.Text>

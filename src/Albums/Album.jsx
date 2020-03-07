@@ -67,7 +67,7 @@ class Album extends Component {
           <Row>
             <Col lg="true">
               <Card style={{ width: "18rem" }}>
-                <Card.Img variant="top" src={this.props.selectedAlbum.cover} />
+                <Card.Img alt="No image" variant="top" src={this.props.selectedAlbum.cover} />
                 <Card.Body>
                   <Card.Title>{this.props.selectedAlbum.name}</Card.Title>
                   <Card.Text>{this.props.selectedAlbum.artist}</Card.Text>
