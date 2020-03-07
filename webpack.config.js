@@ -2,8 +2,11 @@ const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.js",
-  mode:"production",
+  entry: {
+    main: "./src/index.js",
+    sw: "./src/sw.js"
+  },
+  mode: "production",
   output: {
     path: path.resolve(__dirname, "build"),
     filename: "[name].[chunkhash:8].js"
@@ -36,16 +39,16 @@ module.exports = {
     contentBase: "./build",
     historyApiFallback: true,
     proxy: {
-        "/songs": {
-          target: "http://localhost:3001/",
-          pathRewrite: { "^/songs/": "/songs/" },
-          xfwd: true
-        },
-        "/albums": {
-          target: "http://localhost:3001/",
-          pathRewrite: { "^/albums/": "/albums/" },
-          xfwd: true
-        }
+      "/songs": {
+        target: "http://localhost:3001/",
+        pathRewrite: { "^/songs/": "/songs/" },
+        xfwd: true
+      },
+      "/albums": {
+        target: "http://localhost:3001/",
+        pathRewrite: { "^/albums/": "/albums/" },
+        xfwd: true
       }
+    }
   }
 };
