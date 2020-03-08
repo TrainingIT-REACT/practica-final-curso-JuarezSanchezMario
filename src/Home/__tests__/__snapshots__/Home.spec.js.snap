@@ -1,27 +1,351 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Home renders correctly 1`] = `
-<div
-  class="Home"
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
 >
-  <header
-    class="Home-header"
-  >
-    <p>
-      Edit 
-      <code>
-        src/Home.js
-      </code>
-       and save to reload.
-    </p>
-    <a
-      class="Home-link"
-      href="https://reactjs.org"
-      rel="noopener noreferrer"
-      target="_blank"
+  <Connect(Home)>
+    <Home
+      dispatchSelectedAlbum={[Function]}
+      loading={false}
+      recomendados={
+        Array [
+          Object {
+            "artist": "Kimberley",
+            "cover": "/images/cover.jpg",
+            "id": 8,
+            "name": "No guarantees",
+          },
+          Object {
+            "artist": "Delaney",
+            "cover": "/images/cover.jpg",
+            "id": 9,
+            "name": "Don't push this button",
+          },
+          Object {
+            "artist": "Blair",
+            "cover": "/images/cover.jpg",
+            "id": 1,
+            "name": "Chip off the old block",
+          },
+          Object {
+            "artist": "Delaney",
+            "cover": "/images/cover.jpg",
+            "id": 7,
+            "name": "Creative director",
+          },
+          Object {
+            "artist": "Florian",
+            "cover": "/images/cover.jpg",
+            "id": 2,
+            "name": "Battle grounds",
+          },
+        ]
+      }
     >
-      Learn React
-    </a>
-  </header>
-</div>
+      <div>
+        <Badge
+          pill={false}
+          variant="secondary"
+        >
+          <span
+            className="badge badge-secondary"
+          >
+            Recomendaciones
+          </span>
+        </Badge>
+        <CardColumns>
+          <div
+            className="card-columns"
+          >
+            <Card
+              body={false}
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div
+                className="card"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                <CardImg
+                  alt="No image"
+                  src="/images/cover.jpg"
+                  variant="top"
+                >
+                  <img
+                    alt="No image"
+                    className="card-img-top"
+                    src="/images/cover.jpg"
+                  />
+                </CardImg>
+                <CardBody>
+                  <div
+                    className="card-body"
+                  >
+                    <CardTitle>
+                      <ForwardRef
+                        className="card-title"
+                      >
+                        <div
+                          className="card-title h5"
+                        >
+                          No guarantees
+                        </div>
+                      </ForwardRef>
+                    </CardTitle>
+                    <CardText>
+                      <p
+                        className="card-text"
+                      >
+                        Kimberley
+                      </p>
+                    </CardText>
+                  </div>
+                </CardBody>
+              </div>
+            </Card>
+            <Card
+              body={false}
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div
+                className="card"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                <CardImg
+                  alt="No image"
+                  src="/images/cover.jpg"
+                  variant="top"
+                >
+                  <img
+                    alt="No image"
+                    className="card-img-top"
+                    src="/images/cover.jpg"
+                  />
+                </CardImg>
+                <CardBody>
+                  <div
+                    className="card-body"
+                  >
+                    <CardTitle>
+                      <ForwardRef
+                        className="card-title"
+                      >
+                        <div
+                          className="card-title h5"
+                        >
+                          Don't push this button
+                        </div>
+                      </ForwardRef>
+                    </CardTitle>
+                    <CardText>
+                      <p
+                        className="card-text"
+                      >
+                        Delaney
+                      </p>
+                    </CardText>
+                  </div>
+                </CardBody>
+              </div>
+            </Card>
+            <Card
+              body={false}
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div
+                className="card"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                <CardImg
+                  alt="No image"
+                  src="/images/cover.jpg"
+                  variant="top"
+                >
+                  <img
+                    alt="No image"
+                    className="card-img-top"
+                    src="/images/cover.jpg"
+                  />
+                </CardImg>
+                <CardBody>
+                  <div
+                    className="card-body"
+                  >
+                    <CardTitle>
+                      <ForwardRef
+                        className="card-title"
+                      >
+                        <div
+                          className="card-title h5"
+                        >
+                          Chip off the old block
+                        </div>
+                      </ForwardRef>
+                    </CardTitle>
+                    <CardText>
+                      <p
+                        className="card-text"
+                      >
+                        Blair
+                      </p>
+                    </CardText>
+                  </div>
+                </CardBody>
+              </div>
+            </Card>
+            <Card
+              body={false}
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div
+                className="card"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                <CardImg
+                  alt="No image"
+                  src="/images/cover.jpg"
+                  variant="top"
+                >
+                  <img
+                    alt="No image"
+                    className="card-img-top"
+                    src="/images/cover.jpg"
+                  />
+                </CardImg>
+                <CardBody>
+                  <div
+                    className="card-body"
+                  >
+                    <CardTitle>
+                      <ForwardRef
+                        className="card-title"
+                      >
+                        <div
+                          className="card-title h5"
+                        >
+                          Creative director
+                        </div>
+                      </ForwardRef>
+                    </CardTitle>
+                    <CardText>
+                      <p
+                        className="card-text"
+                      >
+                        Delaney
+                      </p>
+                    </CardText>
+                  </div>
+                </CardBody>
+              </div>
+            </Card>
+            <Card
+              body={false}
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div
+                className="card"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                <CardImg
+                  alt="No image"
+                  src="/images/cover.jpg"
+                  variant="top"
+                >
+                  <img
+                    alt="No image"
+                    className="card-img-top"
+                    src="/images/cover.jpg"
+                  />
+                </CardImg>
+                <CardBody>
+                  <div
+                    className="card-body"
+                  >
+                    <CardTitle>
+                      <ForwardRef
+                        className="card-title"
+                      >
+                        <div
+                          className="card-title h5"
+                        >
+                          Battle grounds
+                        </div>
+                      </ForwardRef>
+                    </CardTitle>
+                    <CardText>
+                      <p
+                        className="card-text"
+                      >
+                        Florian
+                      </p>
+                    </CardText>
+                  </div>
+                </CardBody>
+              </div>
+            </Card>
+          </div>
+        </CardColumns>
+      </div>
+    </Home>
+  </Connect(Home)>
+</Provider>
 `;

@@ -1,27 +1,168 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home renders correctly 1`] = `
-<div
-  class="Session"
+exports[`Session renders correctly 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
 >
-  <header
-    class="Session-header"
+  <Router
+    history={
+      Object {
+        "action": "REPLACE",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "vakbp5",
+          "pathname": "/perfil",
+          "search": "",
+          "state": Object {
+            "from": "inicio",
+          },
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
   >
-    <p>
-      Edit 
-      <code>
-        src/Session.js
-      </code>
-       and save to reload.
-    </p>
-    <a
-      class="Session-link"
-      href="https://reactjs.org"
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      Learn React
-    </a>
-  </header>
-</div>
+    <Connect(Session)>
+      <Session
+        dispatchUser={[Function]}
+        user={
+          Object {
+            "email": "mjs.mariojuarezsanchez@gmail.com",
+            "logged": true,
+            "name": "Mario",
+          }
+        }
+      >
+        <div
+          className="Session"
+        >
+          <Badge
+            pill={false}
+            variant="secondary"
+          >
+            <span
+              className="badge badge-secondary"
+            >
+              Inicio sesión
+            </span>
+          </Badge>
+          <Form
+            inline={false}
+            onSubmit={[Function]}
+          >
+            <form
+              className=""
+              onSubmit={[Function]}
+            >
+              <FormGroup
+                controlId="name"
+              >
+                <div
+                  className="form-group"
+                >
+                  <FormControl
+                    placeholder="Name"
+                    required={true}
+                    type="text"
+                  >
+                    <input
+                      className="form-control"
+                      id="name"
+                      placeholder="Name"
+                      required={true}
+                      type="text"
+                    />
+                  </FormControl>
+                </div>
+              </FormGroup>
+              <FormGroup
+                controlId="email"
+              >
+                <div
+                  className="form-group"
+                >
+                  <FormControl
+                    placeholder="Email"
+                    required={true}
+                    type="email"
+                  >
+                    <input
+                      className="form-control"
+                      id="email"
+                      placeholder="Email"
+                      required={true}
+                      type="email"
+                    />
+                  </FormControl>
+                </div>
+              </FormGroup>
+              <FormGroup
+                controlId="pass"
+              >
+                <div
+                  className="form-group"
+                >
+                  <FormControl
+                    placeholder="Contraseña"
+                    required={true}
+                    type="password"
+                  >
+                    <input
+                      className="form-control"
+                      id="pass"
+                      placeholder="Contraseña"
+                      required={true}
+                      type="password"
+                    />
+                  </FormControl>
+                </div>
+              </FormGroup>
+              <Button
+                active={false}
+                disabled={false}
+                type="submit"
+                variant="primary"
+              >
+                <button
+                  className="btn btn-primary"
+                  disabled={false}
+                  type="submit"
+                >
+                  LOG IN
+                </button>
+              </Button>
+            </form>
+          </Form>
+          <Redirect
+            push={false}
+            to={
+              Object {
+                "pathname": "/perfil",
+                "state": Object {
+                  "from": "inicio",
+                },
+              }
+            }
+          />
+        </div>
+      </Session>
+    </Connect(Session)>
+  </Router>
+</Provider>
 `;

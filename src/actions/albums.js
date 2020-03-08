@@ -25,7 +25,6 @@ export const fetchAlbums = () => async dispatch => {
     dispatch(fetchAlbumType(json));
     dispatch(albumsLoaded());
   } catch(e){
-    console.log(e);
     dispatch(postError());
     dispatch(albumsLoaded());
   }

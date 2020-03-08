@@ -1,27 +1,240 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Perfil renders correctly 1`] = `
-<div
-  class="Perfil"
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
 >
-  <header
-    class="Perfil-header"
-  >
-    <p>
-      Edit 
-      <code>
-        src/Perfil.js
-      </code>
-       and save to reload.
-    </p>
-    <a
-      class="Perfil-link"
-      href="https://reactjs.org"
-      rel="noopener noreferrer"
-      target="_blank"
+  <Connect(Perfil)>
+    <Perfil
+      dispatch={[Function]}
+      historicoAlbums={
+        Array [
+          Object {
+            "artist": "Blair",
+            "cover": "/images/cover.jpg",
+            "id": 1,
+            "name": "Chip off the old block",
+          },
+          Object {
+            "artist": "Kimberley",
+            "cover": "/images/cover.jpg",
+            "id": 5,
+            "name": "Ice cold",
+          },
+        ]
+      }
+      historicoSong={
+        Array [
+          Object {
+            "album_id": 1,
+            "audio": "/music/funky_energy_loop.mp3",
+            "id": 1,
+            "name": "Take On Me",
+            "seconds": 203,
+          },
+          Object {
+            "album_id": 1,
+            "audio": "/music/funky_energy_loop.mp3",
+            "id": 2,
+            "name": "S.O.S.",
+            "seconds": 203,
+          },
+        ]
+      }
+      user={
+        Object {
+          "email": "mjs.mariojuarezsanchez@gmail.com",
+          "logged": true,
+          "name": "Mario",
+        }
+      }
     >
-      Learn React
-    </a>
-  </header>
-</div>
+      <div
+        className="Perfil"
+      >
+        <Row
+          noGutters={false}
+        >
+          <div
+            className="row"
+          >
+            <Col>
+              <div
+                className="col"
+              >
+                <Row
+                  noGutters={false}
+                >
+                  <div
+                    className="row"
+                  >
+                    <Badge
+                      pill={false}
+                      variant="secondary"
+                    >
+                      <span
+                        className="badge badge-secondary"
+                      >
+                        Albums visitados recientemente
+                      </span>
+                    </Badge>
+                    <ListGroup
+                      horizontal={null}
+                      variant={null}
+                    >
+                      <ForwardRef
+                        as="div"
+                        className="list-group"
+                        onSelect={[Function]}
+                      >
+                        <div
+                          className="list-group"
+                          onKeyDown={[Function]}
+                        >
+                          <ListGroupItem
+                            active={false}
+                            disabled={false}
+                            variant={null}
+                          >
+                            <ForwardRef
+                              as="div"
+                              className="list-group-item"
+                              disabled={false}
+                              eventKey={null}
+                              onClick={[Function]}
+                            >
+                              <div
+                                className="list-group-item"
+                                data-rb-event-key={null}
+                                disabled={false}
+                                onClick={[Function]}
+                              >
+                                Chip off the old block
+                                 by 
+                                Blair
+                              </div>
+                            </ForwardRef>
+                          </ListGroupItem>
+                          <ListGroupItem
+                            active={false}
+                            disabled={false}
+                            variant={null}
+                          >
+                            <ForwardRef
+                              as="div"
+                              className="list-group-item"
+                              disabled={false}
+                              eventKey={null}
+                              onClick={[Function]}
+                            >
+                              <div
+                                className="list-group-item"
+                                data-rb-event-key={null}
+                                disabled={false}
+                                onClick={[Function]}
+                              >
+                                Ice cold
+                                 by 
+                                Kimberley
+                              </div>
+                            </ForwardRef>
+                          </ListGroupItem>
+                        </div>
+                      </ForwardRef>
+                    </ListGroup>
+                  </div>
+                </Row>
+              </div>
+            </Col>
+            <Col>
+              <div
+                className="col"
+              >
+                <Badge
+                  pill={false}
+                  variant="secondary"
+                >
+                  <span
+                    className="badge badge-secondary"
+                  >
+                    Canciones escuchadas recientemente
+                  </span>
+                </Badge>
+                <ListGroup
+                  horizontal={null}
+                  variant={null}
+                >
+                  <ForwardRef
+                    as="div"
+                    className="list-group"
+                    onSelect={[Function]}
+                  >
+                    <div
+                      className="list-group"
+                      onKeyDown={[Function]}
+                    >
+                      <ListGroupItem
+                        active={false}
+                        disabled={false}
+                        variant={null}
+                      >
+                        <ForwardRef
+                          as="div"
+                          className="list-group-item"
+                          disabled={false}
+                          eventKey={null}
+                          onClick={[Function]}
+                        >
+                          <div
+                            className="list-group-item"
+                            data-rb-event-key={null}
+                            disabled={false}
+                            onClick={[Function]}
+                          >
+                            Take On Me
+                          </div>
+                        </ForwardRef>
+                      </ListGroupItem>
+                      <ListGroupItem
+                        active={false}
+                        disabled={false}
+                        variant={null}
+                      >
+                        <ForwardRef
+                          as="div"
+                          className="list-group-item"
+                          disabled={false}
+                          eventKey={null}
+                          onClick={[Function]}
+                        >
+                          <div
+                            className="list-group-item"
+                            data-rb-event-key={null}
+                            disabled={false}
+                            onClick={[Function]}
+                          >
+                            S.O.S.
+                          </div>
+                        </ForwardRef>
+                      </ListGroupItem>
+                    </div>
+                  </ForwardRef>
+                </ListGroup>
+              </div>
+            </Col>
+          </div>
+        </Row>
+      </div>
+    </Perfil>
+  </Connect(Perfil)>
+</Provider>
 `;

@@ -25,7 +25,7 @@ class Session extends Component {
     const form = event.currentTarget;
     event.preventDefault();
     event.stopPropagation();
-    const user =  {user: { name: form.name.value, email: form.email.value }};
+    const user = { user: { name: form.name.value, email: form.email.value } };
     props.dispatchUser(user);
   }
 
@@ -50,7 +50,8 @@ class Session extends Component {
         {this.props.user.logged ? (
           <Redirect to={{ pathname: "/perfil", state: { from: "inicio" } }} />
         ) : null}
-        {this.props.location.state &&
+        {this.props.location &&
+        this.props.location.state &&
         this.props.location.state.from &&
         this.props.location.state.from === "perfil" ? (
           <Toast

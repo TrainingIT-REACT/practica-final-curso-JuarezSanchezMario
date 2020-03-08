@@ -2,20 +2,22 @@ import React from "react";
 import { mount } from "enzyme";
 import configureStore from "redux-mock-store";
 import { Provider } from "react-redux";
-import { initialState } from "../../store"
+import { initialState } from "../../store";
+import thunk from "redux-thunk";
+
 
 // Componente
-import Home from '../Home';
+import Perfil from '../Perfil';
 
-describe("Home", () => {
-  const mockStore = configureStore();
+describe("Perfil", () => {
+  const mockStore = configureStore([thunk]);
   let store, wrapper;
 
   beforeEach(() => {
     store = mockStore(initialState);
     wrapper = mount(
       <Provider store={store}>
-        <Home />
+        <Perfil />
       </Provider>
     );
   });

@@ -1,27 +1,462 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App renders correctly 1`] = `
-<div
-  class="App"
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
 >
-  <header
-    class="App-header"
-  >
-    <p>
-      Edit 
-      <code>
-        src/App.js
-      </code>
-       and save to reload.
-    </p>
-    <a
-      class="App-link"
-      href="https://reactjs.org"
-      rel="noopener noreferrer"
-      target="_blank"
+  <Connect(App)>
+    <App
+      deleteUser={[Function]}
+      displayFetchAlbums={[Function]}
+      user={
+        Object {
+          "email": "mjs.mariojuarezsanchez@gmail.com",
+          "logged": true,
+          "name": "Mario",
+        }
+      }
     >
-      Learn React
-    </a>
-  </header>
-</div>
+      <div
+        className="App"
+      >
+        <Suspense
+          fallback="loading..."
+        >
+          <Router
+            history={
+              Object {
+                "action": "POP",
+                "block": [Function],
+                "createHref": [Function],
+                "go": [Function],
+                "goBack": [Function],
+                "goForward": [Function],
+                "length": 1,
+                "listen": [Function],
+                "location": Object {
+                  "hash": "",
+                  "pathname": "/",
+                  "search": "",
+                  "state": undefined,
+                },
+                "push": [Function],
+                "replace": [Function],
+              }
+            }
+          >
+            <div
+              className="AppContainer"
+            >
+              <div
+                className="vistaMenu"
+              >
+                <Navbar
+                  bg="dark"
+                  collapseOnSelect={false}
+                  expand={true}
+                  variant="dark"
+                >
+                  <nav
+                    className="navbar navbar-expand navbar-dark bg-dark"
+                  >
+                    <Container
+                      fluid={false}
+                    >
+                      <div
+                        className="container"
+                      >
+                        <NavbarBrand
+                          onClick={[Function]}
+                          style={
+                            Object {
+                              "color": "#ffefefd1",
+                              "cursor": "pointer",
+                            }
+                          }
+                        >
+                          <span
+                            className="navbar-brand"
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "color": "#ffefefd1",
+                                "cursor": "pointer",
+                              }
+                            }
+                          >
+                            Spotiphy
+                          </span>
+                        </NavbarBrand>
+                        <Nav
+                          fill={false}
+                          justify={false}
+                        >
+                          <ForwardRef
+                            as="div"
+                            className="navbar-nav"
+                            onSelect={[Function]}
+                          >
+                            <div
+                              className="navbar-nav"
+                              onKeyDown={[Function]}
+                            >
+                              <NavLink
+                                as={
+                                  Object {
+                                    "$$typeof": Symbol(react.forward_ref),
+                                    "displayName": "SafeAnchor",
+                                    "render": [Function],
+                                  }
+                                }
+                                disabled={false}
+                                onClick={[Function]}
+                                style={
+                                  Object {
+                                    "color": "#ffefefd1",
+                                    "paddingRight": "50px",
+                                  }
+                                }
+                              >
+                                <ForwardRef
+                                  as={
+                                    Object {
+                                      "$$typeof": Symbol(react.forward_ref),
+                                      "displayName": "SafeAnchor",
+                                      "render": [Function],
+                                    }
+                                  }
+                                  className="nav-link"
+                                  disabled={false}
+                                  onClick={[Function]}
+                                  style={
+                                    Object {
+                                      "color": "#ffefefd1",
+                                      "paddingRight": "50px",
+                                    }
+                                  }
+                                >
+                                  <SafeAnchor
+                                    className="nav-link"
+                                    data-rb-event-key={null}
+                                    disabled={false}
+                                    onClick={[Function]}
+                                    style={
+                                      Object {
+                                        "color": "#ffefefd1",
+                                        "paddingRight": "50px",
+                                      }
+                                    }
+                                  >
+                                    <a
+                                      className="nav-link"
+                                      data-rb-event-key={null}
+                                      href="#"
+                                      onClick={[Function]}
+                                      onKeyDown={[Function]}
+                                      role="button"
+                                      style={
+                                        Object {
+                                          "color": "#ffefefd1",
+                                          "paddingRight": "50px",
+                                        }
+                                      }
+                                    >
+                                      Inicio
+                                    </a>
+                                  </SafeAnchor>
+                                </ForwardRef>
+                              </NavLink>
+                              <NavLink
+                                as={
+                                  Object {
+                                    "$$typeof": Symbol(react.forward_ref),
+                                    "displayName": "SafeAnchor",
+                                    "render": [Function],
+                                  }
+                                }
+                                disabled={false}
+                                onClick={[Function]}
+                                style={
+                                  Object {
+                                    "color": "#ffefefd1",
+                                    "paddingRight": "50px",
+                                  }
+                                }
+                              >
+                                <ForwardRef
+                                  as={
+                                    Object {
+                                      "$$typeof": Symbol(react.forward_ref),
+                                      "displayName": "SafeAnchor",
+                                      "render": [Function],
+                                    }
+                                  }
+                                  className="nav-link"
+                                  disabled={false}
+                                  onClick={[Function]}
+                                  style={
+                                    Object {
+                                      "color": "#ffefefd1",
+                                      "paddingRight": "50px",
+                                    }
+                                  }
+                                >
+                                  <SafeAnchor
+                                    className="nav-link"
+                                    data-rb-event-key={null}
+                                    disabled={false}
+                                    onClick={[Function]}
+                                    style={
+                                      Object {
+                                        "color": "#ffefefd1",
+                                        "paddingRight": "50px",
+                                      }
+                                    }
+                                  >
+                                    <a
+                                      className="nav-link"
+                                      data-rb-event-key={null}
+                                      href="#"
+                                      onClick={[Function]}
+                                      onKeyDown={[Function]}
+                                      role="button"
+                                      style={
+                                        Object {
+                                          "color": "#ffefefd1",
+                                          "paddingRight": "50px",
+                                        }
+                                      }
+                                    >
+                                      Albums
+                                    </a>
+                                  </SafeAnchor>
+                                </ForwardRef>
+                              </NavLink>
+                              <NavLink
+                                as={
+                                  Object {
+                                    "$$typeof": Symbol(react.forward_ref),
+                                    "displayName": "SafeAnchor",
+                                    "render": [Function],
+                                  }
+                                }
+                                disabled={false}
+                                onClick={[Function]}
+                                style={
+                                  Object {
+                                    "color": "#ffefefd1",
+                                    "paddingRight": "50px",
+                                  }
+                                }
+                              >
+                                <ForwardRef
+                                  as={
+                                    Object {
+                                      "$$typeof": Symbol(react.forward_ref),
+                                      "displayName": "SafeAnchor",
+                                      "render": [Function],
+                                    }
+                                  }
+                                  className="nav-link"
+                                  disabled={false}
+                                  onClick={[Function]}
+                                  style={
+                                    Object {
+                                      "color": "#ffefefd1",
+                                      "paddingRight": "50px",
+                                    }
+                                  }
+                                >
+                                  <SafeAnchor
+                                    className="nav-link"
+                                    data-rb-event-key={null}
+                                    disabled={false}
+                                    onClick={[Function]}
+                                    style={
+                                      Object {
+                                        "color": "#ffefefd1",
+                                        "paddingRight": "50px",
+                                      }
+                                    }
+                                  >
+                                    <a
+                                      className="nav-link"
+                                      data-rb-event-key={null}
+                                      href="#"
+                                      onClick={[Function]}
+                                      onKeyDown={[Function]}
+                                      role="button"
+                                      style={
+                                        Object {
+                                          "color": "#ffefefd1",
+                                          "paddingRight": "50px",
+                                        }
+                                      }
+                                    >
+                                      Perfil
+                                    </a>
+                                  </SafeAnchor>
+                                </ForwardRef>
+                              </NavLink>
+                            </div>
+                          </ForwardRef>
+                        </Nav>
+                        <ButtonToolbar
+                          role="toolbar"
+                        >
+                          <div
+                            className="btn-toolbar"
+                            role="toolbar"
+                          >
+                            <Button
+                              active={false}
+                              disabled={false}
+                              onClick={[Function]}
+                              type="button"
+                              variant="info"
+                            >
+                              <button
+                                className="btn btn-info"
+                                disabled={false}
+                                onClick={[Function]}
+                                type="button"
+                              >
+                                Cerrar Sesión
+                              </button>
+                            </Button>
+                          </div>
+                        </ButtonToolbar>
+                      </div>
+                    </Container>
+                    <Badge
+                      onClick={[Function]}
+                      pill={true}
+                      style={
+                        Object {
+                          "cursor": "pointer",
+                        }
+                      }
+                      variant="primary"
+                    >
+                      <span
+                        className="badge badge-pill badge-primary"
+                        onClick={[Function]}
+                        style={
+                          Object {
+                            "cursor": "pointer",
+                          }
+                        }
+                      >
+                        Mario
+                         
+                        mjs.mariojuarezsanchez@gmail.com
+                      </span>
+                    </Badge>
+                  </nav>
+                </Navbar>
+                <div
+                  className="vistaCentro"
+                >
+                  <Suspense
+                    fallback="loading Home..."
+                  >
+                    <Route
+                      component={
+                        Object {
+                          "$$typeof": Symbol(react.lazy),
+                          "_ctor": [Function],
+                          "_result": Object {
+                            "$$typeof": Symbol(react.memo),
+                            "WrappedComponent": [Function],
+                            "compare": null,
+                            "displayName": "Connect(Home)",
+                            "type": [Function],
+                            Symbol(Symbol.hasInstance): [Function],
+                          },
+                          "_status": 1,
+                        }
+                      }
+                      exact={true}
+                      path="/"
+                    />
+                    loading Home...
+                  </Suspense>
+                  <Suspense
+                    fallback="loading Session..."
+                  >
+                    <Route
+                      component={
+                        Object {
+                          "$$typeof": Symbol(react.lazy),
+                          "_ctor": [Function],
+                          "_result": null,
+                          "_status": -1,
+                        }
+                      }
+                      path="/session"
+                    />
+                  </Suspense>
+                  <Suspense
+                    fallback="loading Albums..."
+                  >
+                    <Route
+                      component={
+                        Object {
+                          "$$typeof": Symbol(react.lazy),
+                          "_ctor": [Function],
+                          "_result": null,
+                          "_status": -1,
+                        }
+                      }
+                      path="/albums"
+                    />
+                  </Suspense>
+                  <Suspense
+                    fallback="loading Album..."
+                  >
+                    <Route
+                      component={
+                        Object {
+                          "$$typeof": Symbol(react.lazy),
+                          "_ctor": [Function],
+                          "_result": null,
+                          "_status": -1,
+                        }
+                      }
+                      path="/album"
+                    />
+                  </Suspense>
+                  <Suspense
+                    fallback="loading Perfil..."
+                  >
+                    <Route
+                      component={
+                        Object {
+                          "$$typeof": Symbol(react.lazy),
+                          "_ctor": [Function],
+                          "_result": null,
+                          "_status": -1,
+                        }
+                      }
+                      path="/perfil"
+                    />
+                  </Suspense>
+                </div>
+              </div>
+            </div>
+          </Router>
+        </Suspense>
+      </div>
+    </App>
+  </Connect(App)>
+</Provider>
 `;

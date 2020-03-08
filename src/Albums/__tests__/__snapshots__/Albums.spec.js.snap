@@ -1,27 +1,1625 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Albums renders correctly 1`] = `
-<div
-  class="Albums"
+exports[`Album renders correctly 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
 >
-  <header
-    class="Home-header"
-  >
-    <p>
-      Edit 
-      <code>
-        src/Albums.js
-      </code>
-       and save to reload.
-    </p>
-    <a
-      class="Albums-link"
-      href="https://reactjs.org"
-      rel="noopener noreferrer"
-      target="_blank"
+  <Connect(Albums)>
+    <Albums
+      albums={
+        Array [
+          Object {
+            "artist": "Blair",
+            "cover": "/images/cover.jpg",
+            "id": 1,
+            "name": "Chip off the old block",
+          },
+          Object {
+            "artist": "Florian",
+            "cover": "/images/cover.jpg",
+            "id": 2,
+            "name": "Battle grounds",
+          },
+          Object {
+            "artist": "Skylar",
+            "cover": "/images/cover.jpg",
+            "id": 3,
+            "name": "Decisions decisions",
+          },
+          Object {
+            "artist": "Skylar",
+            "cover": "/images/cover.jpg",
+            "id": 4,
+            "name": "Blank canvas",
+          },
+          Object {
+            "artist": "Kimberley",
+            "cover": "/images/cover.jpg",
+            "id": 5,
+            "name": "Ice cold",
+          },
+          Object {
+            "artist": "Ted Garrett",
+            "cover": "/images/cover.jpg",
+            "id": 6,
+            "name": "Honesty",
+          },
+          Object {
+            "artist": "Delaney",
+            "cover": "/images/cover.jpg",
+            "id": 7,
+            "name": "Creative director",
+          },
+          Object {
+            "artist": "Kimberley",
+            "cover": "/images/cover.jpg",
+            "id": 8,
+            "name": "No guarantees",
+          },
+          Object {
+            "artist": "Delaney",
+            "cover": "/images/cover.jpg",
+            "id": 9,
+            "name": "Don't push this button",
+          },
+          Object {
+            "artist": "Stacy",
+            "cover": "/images/cover.jpg",
+            "id": 10,
+            "name": "Cherry",
+          },
+        ]
+      }
+      dispatchSelectedAlbum={[Function]}
+      fetchByArits={[Function]}
+      fetchByName={[Function]}
+      loading={false}
     >
-      Learn React
-    </a>
-  </header>
-</div>
+      <div
+        className="Albums"
+      >
+        <Form
+          inline={false}
+          onSubmit={[Function]}
+        >
+          <form
+            className=""
+            onSubmit={[Function]}
+          >
+            <FormGroup
+              controlId="search"
+            >
+              <div
+                className="form-group"
+              >
+                <FormControl
+                  defaultValue=""
+                  placeholder="Buscar"
+                  type="text"
+                >
+                  <input
+                    className="form-control"
+                    defaultValue=""
+                    id="search"
+                    placeholder="Buscar"
+                    type="text"
+                  />
+                </FormControl>
+              </div>
+            </FormGroup>
+            <Button
+              active={false}
+              disabled={false}
+              type="submit"
+              variant="primary"
+            >
+              <button
+                className="btn btn-primary"
+                disabled={false}
+                type="submit"
+              >
+                Buscar
+              </button>
+            </Button>
+            <FormGroup>
+              <div
+                className="form-group"
+              >
+                <FormCheck
+                  checked={true}
+                  custom={true}
+                  disabled={false}
+                  id="formHorizontalRadios1"
+                  inline={false}
+                  isInvalid={false}
+                  isValid={false}
+                  label="Por nombre"
+                  name="formHorizontalRadios"
+                  onClick={[Function]}
+                  title=""
+                  type="radio"
+                >
+                  <div
+                    className="custom-control custom-radio"
+                  >
+                    <FormCheckInput
+                      as="input"
+                      checked={true}
+                      disabled={false}
+                      isInvalid={false}
+                      isStatic={false}
+                      isValid={false}
+                      name="formHorizontalRadios"
+                      onClick={[Function]}
+                      type="radio"
+                    >
+                      <input
+                        checked={true}
+                        className="custom-control-input"
+                        disabled={false}
+                        id="formHorizontalRadios1"
+                        name="formHorizontalRadios"
+                        onClick={[Function]}
+                        type="radio"
+                      />
+                    </FormCheckInput>
+                    <FormCheckLabel
+                      title=""
+                    >
+                      <label
+                        className="custom-control-label"
+                        htmlFor="formHorizontalRadios1"
+                        title=""
+                      >
+                        Por nombre
+                      </label>
+                    </FormCheckLabel>
+                  </div>
+                </FormCheck>
+                <FormCheck
+                  checked={false}
+                  custom={true}
+                  disabled={false}
+                  id="formHorizontalRadios2"
+                  inline={false}
+                  isInvalid={false}
+                  isValid={false}
+                  label="Por artista"
+                  name="formHorizontalRadios"
+                  onClick={[Function]}
+                  title=""
+                  type="radio"
+                >
+                  <div
+                    className="custom-control custom-radio"
+                  >
+                    <FormCheckInput
+                      as="input"
+                      checked={false}
+                      disabled={false}
+                      isInvalid={false}
+                      isStatic={false}
+                      isValid={false}
+                      name="formHorizontalRadios"
+                      onClick={[Function]}
+                      type="radio"
+                    >
+                      <input
+                        checked={false}
+                        className="custom-control-input"
+                        disabled={false}
+                        id="formHorizontalRadios2"
+                        name="formHorizontalRadios"
+                        onClick={[Function]}
+                        type="radio"
+                      />
+                    </FormCheckInput>
+                    <FormCheckLabel
+                      title=""
+                    >
+                      <label
+                        className="custom-control-label"
+                        htmlFor="formHorizontalRadios2"
+                        title=""
+                      >
+                        Por artista
+                      </label>
+                    </FormCheckLabel>
+                  </div>
+                </FormCheck>
+              </div>
+            </FormGroup>
+          </form>
+        </Form>
+        <Badge
+          pill={false}
+          variant="secondary"
+        >
+          <span
+            className="badge badge-secondary"
+          >
+            Albums
+          </span>
+        </Badge>
+        <CardColumns>
+          <div
+            className="card-columns"
+          >
+            <Card
+              body={false}
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div
+                className="card"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                <CardImg
+                  alt="No image"
+                  src="/images/cover.jpg"
+                  variant="top"
+                >
+                  <img
+                    alt="No image"
+                    className="card-img-top"
+                    src="/images/cover.jpg"
+                  />
+                </CardImg>
+                <CardBody>
+                  <div
+                    className="card-body"
+                  >
+                    <CardTitle>
+                      <ForwardRef
+                        className="card-title"
+                      >
+                        <div
+                          className="card-title h5"
+                        >
+                          Chip off the old block
+                        </div>
+                      </ForwardRef>
+                    </CardTitle>
+                    <CardText>
+                      <p
+                        className="card-text"
+                      >
+                        Blair
+                      </p>
+                    </CardText>
+                  </div>
+                </CardBody>
+              </div>
+            </Card>
+            <Card
+              body={false}
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div
+                className="card"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                <CardImg
+                  alt="No image"
+                  src="/images/cover.jpg"
+                  variant="top"
+                >
+                  <img
+                    alt="No image"
+                    className="card-img-top"
+                    src="/images/cover.jpg"
+                  />
+                </CardImg>
+                <CardBody>
+                  <div
+                    className="card-body"
+                  >
+                    <CardTitle>
+                      <ForwardRef
+                        className="card-title"
+                      >
+                        <div
+                          className="card-title h5"
+                        >
+                          Battle grounds
+                        </div>
+                      </ForwardRef>
+                    </CardTitle>
+                    <CardText>
+                      <p
+                        className="card-text"
+                      >
+                        Florian
+                      </p>
+                    </CardText>
+                  </div>
+                </CardBody>
+              </div>
+            </Card>
+            <Card
+              body={false}
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div
+                className="card"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                <CardImg
+                  alt="No image"
+                  src="/images/cover.jpg"
+                  variant="top"
+                >
+                  <img
+                    alt="No image"
+                    className="card-img-top"
+                    src="/images/cover.jpg"
+                  />
+                </CardImg>
+                <CardBody>
+                  <div
+                    className="card-body"
+                  >
+                    <CardTitle>
+                      <ForwardRef
+                        className="card-title"
+                      >
+                        <div
+                          className="card-title h5"
+                        >
+                          Decisions decisions
+                        </div>
+                      </ForwardRef>
+                    </CardTitle>
+                    <CardText>
+                      <p
+                        className="card-text"
+                      >
+                        Skylar
+                      </p>
+                    </CardText>
+                  </div>
+                </CardBody>
+              </div>
+            </Card>
+            <Card
+              body={false}
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div
+                className="card"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                <CardImg
+                  alt="No image"
+                  src="/images/cover.jpg"
+                  variant="top"
+                >
+                  <img
+                    alt="No image"
+                    className="card-img-top"
+                    src="/images/cover.jpg"
+                  />
+                </CardImg>
+                <CardBody>
+                  <div
+                    className="card-body"
+                  >
+                    <CardTitle>
+                      <ForwardRef
+                        className="card-title"
+                      >
+                        <div
+                          className="card-title h5"
+                        >
+                          Blank canvas
+                        </div>
+                      </ForwardRef>
+                    </CardTitle>
+                    <CardText>
+                      <p
+                        className="card-text"
+                      >
+                        Skylar
+                      </p>
+                    </CardText>
+                  </div>
+                </CardBody>
+              </div>
+            </Card>
+            <Card
+              body={false}
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div
+                className="card"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                <CardImg
+                  alt="No image"
+                  src="/images/cover.jpg"
+                  variant="top"
+                >
+                  <img
+                    alt="No image"
+                    className="card-img-top"
+                    src="/images/cover.jpg"
+                  />
+                </CardImg>
+                <CardBody>
+                  <div
+                    className="card-body"
+                  >
+                    <CardTitle>
+                      <ForwardRef
+                        className="card-title"
+                      >
+                        <div
+                          className="card-title h5"
+                        >
+                          Ice cold
+                        </div>
+                      </ForwardRef>
+                    </CardTitle>
+                    <CardText>
+                      <p
+                        className="card-text"
+                      >
+                        Kimberley
+                      </p>
+                    </CardText>
+                  </div>
+                </CardBody>
+              </div>
+            </Card>
+            <Card
+              body={false}
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div
+                className="card"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                <CardImg
+                  alt="No image"
+                  src="/images/cover.jpg"
+                  variant="top"
+                >
+                  <img
+                    alt="No image"
+                    className="card-img-top"
+                    src="/images/cover.jpg"
+                  />
+                </CardImg>
+                <CardBody>
+                  <div
+                    className="card-body"
+                  >
+                    <CardTitle>
+                      <ForwardRef
+                        className="card-title"
+                      >
+                        <div
+                          className="card-title h5"
+                        >
+                          Honesty
+                        </div>
+                      </ForwardRef>
+                    </CardTitle>
+                    <CardText>
+                      <p
+                        className="card-text"
+                      >
+                        Ted Garrett
+                      </p>
+                    </CardText>
+                  </div>
+                </CardBody>
+              </div>
+            </Card>
+            <Card
+              body={false}
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div
+                className="card"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                <CardImg
+                  alt="No image"
+                  src="/images/cover.jpg"
+                  variant="top"
+                >
+                  <img
+                    alt="No image"
+                    className="card-img-top"
+                    src="/images/cover.jpg"
+                  />
+                </CardImg>
+                <CardBody>
+                  <div
+                    className="card-body"
+                  >
+                    <CardTitle>
+                      <ForwardRef
+                        className="card-title"
+                      >
+                        <div
+                          className="card-title h5"
+                        >
+                          Creative director
+                        </div>
+                      </ForwardRef>
+                    </CardTitle>
+                    <CardText>
+                      <p
+                        className="card-text"
+                      >
+                        Delaney
+                      </p>
+                    </CardText>
+                  </div>
+                </CardBody>
+              </div>
+            </Card>
+            <Card
+              body={false}
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div
+                className="card"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                <CardImg
+                  alt="No image"
+                  src="/images/cover.jpg"
+                  variant="top"
+                >
+                  <img
+                    alt="No image"
+                    className="card-img-top"
+                    src="/images/cover.jpg"
+                  />
+                </CardImg>
+                <CardBody>
+                  <div
+                    className="card-body"
+                  >
+                    <CardTitle>
+                      <ForwardRef
+                        className="card-title"
+                      >
+                        <div
+                          className="card-title h5"
+                        >
+                          No guarantees
+                        </div>
+                      </ForwardRef>
+                    </CardTitle>
+                    <CardText>
+                      <p
+                        className="card-text"
+                      >
+                        Kimberley
+                      </p>
+                    </CardText>
+                  </div>
+                </CardBody>
+              </div>
+            </Card>
+            <Card
+              body={false}
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div
+                className="card"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                <CardImg
+                  alt="No image"
+                  src="/images/cover.jpg"
+                  variant="top"
+                >
+                  <img
+                    alt="No image"
+                    className="card-img-top"
+                    src="/images/cover.jpg"
+                  />
+                </CardImg>
+                <CardBody>
+                  <div
+                    className="card-body"
+                  >
+                    <CardTitle>
+                      <ForwardRef
+                        className="card-title"
+                      >
+                        <div
+                          className="card-title h5"
+                        >
+                          Don't push this button
+                        </div>
+                      </ForwardRef>
+                    </CardTitle>
+                    <CardText>
+                      <p
+                        className="card-text"
+                      >
+                        Delaney
+                      </p>
+                    </CardText>
+                  </div>
+                </CardBody>
+              </div>
+            </Card>
+            <Card
+              body={false}
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div
+                className="card"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                <CardImg
+                  alt="No image"
+                  src="/images/cover.jpg"
+                  variant="top"
+                >
+                  <img
+                    alt="No image"
+                    className="card-img-top"
+                    src="/images/cover.jpg"
+                  />
+                </CardImg>
+                <CardBody>
+                  <div
+                    className="card-body"
+                  >
+                    <CardTitle>
+                      <ForwardRef
+                        className="card-title"
+                      >
+                        <div
+                          className="card-title h5"
+                        >
+                          Cherry
+                        </div>
+                      </ForwardRef>
+                    </CardTitle>
+                    <CardText>
+                      <p
+                        className="card-text"
+                      >
+                        Stacy
+                      </p>
+                    </CardText>
+                  </div>
+                </CardBody>
+              </div>
+            </Card>
+          </div>
+        </CardColumns>
+      </div>
+    </Albums>
+  </Connect(Albums)>
+</Provider>
+`;
+
+exports[`Albums renders correctly 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(Albums)>
+    <Albums
+      albums={
+        Array [
+          Object {
+            "artist": "Blair",
+            "cover": "/images/cover.jpg",
+            "id": 1,
+            "name": "Chip off the old block",
+          },
+          Object {
+            "artist": "Florian",
+            "cover": "/images/cover.jpg",
+            "id": 2,
+            "name": "Battle grounds",
+          },
+          Object {
+            "artist": "Skylar",
+            "cover": "/images/cover.jpg",
+            "id": 3,
+            "name": "Decisions decisions",
+          },
+          Object {
+            "artist": "Skylar",
+            "cover": "/images/cover.jpg",
+            "id": 4,
+            "name": "Blank canvas",
+          },
+          Object {
+            "artist": "Kimberley",
+            "cover": "/images/cover.jpg",
+            "id": 5,
+            "name": "Ice cold",
+          },
+          Object {
+            "artist": "Ted Garrett",
+            "cover": "/images/cover.jpg",
+            "id": 6,
+            "name": "Honesty",
+          },
+          Object {
+            "artist": "Delaney",
+            "cover": "/images/cover.jpg",
+            "id": 7,
+            "name": "Creative director",
+          },
+          Object {
+            "artist": "Kimberley",
+            "cover": "/images/cover.jpg",
+            "id": 8,
+            "name": "No guarantees",
+          },
+          Object {
+            "artist": "Delaney",
+            "cover": "/images/cover.jpg",
+            "id": 9,
+            "name": "Don't push this button",
+          },
+          Object {
+            "artist": "Stacy",
+            "cover": "/images/cover.jpg",
+            "id": 10,
+            "name": "Cherry",
+          },
+        ]
+      }
+      dispatchSelectedAlbum={[Function]}
+      fetchByArits={[Function]}
+      fetchByName={[Function]}
+      loading={false}
+    >
+      <div
+        className="Albums"
+      >
+        <Form
+          inline={false}
+          onSubmit={[Function]}
+        >
+          <form
+            className=""
+            onSubmit={[Function]}
+          >
+            <FormGroup
+              controlId="search"
+            >
+              <div
+                className="form-group"
+              >
+                <FormControl
+                  defaultValue=""
+                  placeholder="Buscar"
+                  type="text"
+                >
+                  <input
+                    className="form-control"
+                    defaultValue=""
+                    id="search"
+                    placeholder="Buscar"
+                    type="text"
+                  />
+                </FormControl>
+              </div>
+            </FormGroup>
+            <Button
+              active={false}
+              disabled={false}
+              type="submit"
+              variant="primary"
+            >
+              <button
+                className="btn btn-primary"
+                disabled={false}
+                type="submit"
+              >
+                Buscar
+              </button>
+            </Button>
+            <FormGroup>
+              <div
+                className="form-group"
+              >
+                <FormCheck
+                  checked={true}
+                  custom={true}
+                  disabled={false}
+                  id="formHorizontalRadios1"
+                  inline={false}
+                  isInvalid={false}
+                  isValid={false}
+                  label="Por nombre"
+                  name="formHorizontalRadios"
+                  onClick={[Function]}
+                  title=""
+                  type="radio"
+                >
+                  <div
+                    className="custom-control custom-radio"
+                  >
+                    <FormCheckInput
+                      as="input"
+                      checked={true}
+                      disabled={false}
+                      isInvalid={false}
+                      isStatic={false}
+                      isValid={false}
+                      name="formHorizontalRadios"
+                      onClick={[Function]}
+                      type="radio"
+                    >
+                      <input
+                        checked={true}
+                        className="custom-control-input"
+                        disabled={false}
+                        id="formHorizontalRadios1"
+                        name="formHorizontalRadios"
+                        onClick={[Function]}
+                        type="radio"
+                      />
+                    </FormCheckInput>
+                    <FormCheckLabel
+                      title=""
+                    >
+                      <label
+                        className="custom-control-label"
+                        htmlFor="formHorizontalRadios1"
+                        title=""
+                      >
+                        Por nombre
+                      </label>
+                    </FormCheckLabel>
+                  </div>
+                </FormCheck>
+                <FormCheck
+                  checked={false}
+                  custom={true}
+                  disabled={false}
+                  id="formHorizontalRadios2"
+                  inline={false}
+                  isInvalid={false}
+                  isValid={false}
+                  label="Por artista"
+                  name="formHorizontalRadios"
+                  onClick={[Function]}
+                  title=""
+                  type="radio"
+                >
+                  <div
+                    className="custom-control custom-radio"
+                  >
+                    <FormCheckInput
+                      as="input"
+                      checked={false}
+                      disabled={false}
+                      isInvalid={false}
+                      isStatic={false}
+                      isValid={false}
+                      name="formHorizontalRadios"
+                      onClick={[Function]}
+                      type="radio"
+                    >
+                      <input
+                        checked={false}
+                        className="custom-control-input"
+                        disabled={false}
+                        id="formHorizontalRadios2"
+                        name="formHorizontalRadios"
+                        onClick={[Function]}
+                        type="radio"
+                      />
+                    </FormCheckInput>
+                    <FormCheckLabel
+                      title=""
+                    >
+                      <label
+                        className="custom-control-label"
+                        htmlFor="formHorizontalRadios2"
+                        title=""
+                      >
+                        Por artista
+                      </label>
+                    </FormCheckLabel>
+                  </div>
+                </FormCheck>
+              </div>
+            </FormGroup>
+          </form>
+        </Form>
+        <Badge
+          pill={false}
+          variant="secondary"
+        >
+          <span
+            className="badge badge-secondary"
+          >
+            Albums
+          </span>
+        </Badge>
+        <CardColumns>
+          <div
+            className="card-columns"
+          >
+            <Card
+              body={false}
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div
+                className="card"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                <CardImg
+                  alt="No image"
+                  src="/images/cover.jpg"
+                  variant="top"
+                >
+                  <img
+                    alt="No image"
+                    className="card-img-top"
+                    src="/images/cover.jpg"
+                  />
+                </CardImg>
+                <CardBody>
+                  <div
+                    className="card-body"
+                  >
+                    <CardTitle>
+                      <ForwardRef
+                        className="card-title"
+                      >
+                        <div
+                          className="card-title h5"
+                        >
+                          Chip off the old block
+                        </div>
+                      </ForwardRef>
+                    </CardTitle>
+                    <CardText>
+                      <p
+                        className="card-text"
+                      >
+                        Blair
+                      </p>
+                    </CardText>
+                  </div>
+                </CardBody>
+              </div>
+            </Card>
+            <Card
+              body={false}
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div
+                className="card"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                <CardImg
+                  alt="No image"
+                  src="/images/cover.jpg"
+                  variant="top"
+                >
+                  <img
+                    alt="No image"
+                    className="card-img-top"
+                    src="/images/cover.jpg"
+                  />
+                </CardImg>
+                <CardBody>
+                  <div
+                    className="card-body"
+                  >
+                    <CardTitle>
+                      <ForwardRef
+                        className="card-title"
+                      >
+                        <div
+                          className="card-title h5"
+                        >
+                          Battle grounds
+                        </div>
+                      </ForwardRef>
+                    </CardTitle>
+                    <CardText>
+                      <p
+                        className="card-text"
+                      >
+                        Florian
+                      </p>
+                    </CardText>
+                  </div>
+                </CardBody>
+              </div>
+            </Card>
+            <Card
+              body={false}
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div
+                className="card"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                <CardImg
+                  alt="No image"
+                  src="/images/cover.jpg"
+                  variant="top"
+                >
+                  <img
+                    alt="No image"
+                    className="card-img-top"
+                    src="/images/cover.jpg"
+                  />
+                </CardImg>
+                <CardBody>
+                  <div
+                    className="card-body"
+                  >
+                    <CardTitle>
+                      <ForwardRef
+                        className="card-title"
+                      >
+                        <div
+                          className="card-title h5"
+                        >
+                          Decisions decisions
+                        </div>
+                      </ForwardRef>
+                    </CardTitle>
+                    <CardText>
+                      <p
+                        className="card-text"
+                      >
+                        Skylar
+                      </p>
+                    </CardText>
+                  </div>
+                </CardBody>
+              </div>
+            </Card>
+            <Card
+              body={false}
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div
+                className="card"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                <CardImg
+                  alt="No image"
+                  src="/images/cover.jpg"
+                  variant="top"
+                >
+                  <img
+                    alt="No image"
+                    className="card-img-top"
+                    src="/images/cover.jpg"
+                  />
+                </CardImg>
+                <CardBody>
+                  <div
+                    className="card-body"
+                  >
+                    <CardTitle>
+                      <ForwardRef
+                        className="card-title"
+                      >
+                        <div
+                          className="card-title h5"
+                        >
+                          Blank canvas
+                        </div>
+                      </ForwardRef>
+                    </CardTitle>
+                    <CardText>
+                      <p
+                        className="card-text"
+                      >
+                        Skylar
+                      </p>
+                    </CardText>
+                  </div>
+                </CardBody>
+              </div>
+            </Card>
+            <Card
+              body={false}
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div
+                className="card"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                <CardImg
+                  alt="No image"
+                  src="/images/cover.jpg"
+                  variant="top"
+                >
+                  <img
+                    alt="No image"
+                    className="card-img-top"
+                    src="/images/cover.jpg"
+                  />
+                </CardImg>
+                <CardBody>
+                  <div
+                    className="card-body"
+                  >
+                    <CardTitle>
+                      <ForwardRef
+                        className="card-title"
+                      >
+                        <div
+                          className="card-title h5"
+                        >
+                          Ice cold
+                        </div>
+                      </ForwardRef>
+                    </CardTitle>
+                    <CardText>
+                      <p
+                        className="card-text"
+                      >
+                        Kimberley
+                      </p>
+                    </CardText>
+                  </div>
+                </CardBody>
+              </div>
+            </Card>
+            <Card
+              body={false}
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div
+                className="card"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                <CardImg
+                  alt="No image"
+                  src="/images/cover.jpg"
+                  variant="top"
+                >
+                  <img
+                    alt="No image"
+                    className="card-img-top"
+                    src="/images/cover.jpg"
+                  />
+                </CardImg>
+                <CardBody>
+                  <div
+                    className="card-body"
+                  >
+                    <CardTitle>
+                      <ForwardRef
+                        className="card-title"
+                      >
+                        <div
+                          className="card-title h5"
+                        >
+                          Honesty
+                        </div>
+                      </ForwardRef>
+                    </CardTitle>
+                    <CardText>
+                      <p
+                        className="card-text"
+                      >
+                        Ted Garrett
+                      </p>
+                    </CardText>
+                  </div>
+                </CardBody>
+              </div>
+            </Card>
+            <Card
+              body={false}
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div
+                className="card"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                <CardImg
+                  alt="No image"
+                  src="/images/cover.jpg"
+                  variant="top"
+                >
+                  <img
+                    alt="No image"
+                    className="card-img-top"
+                    src="/images/cover.jpg"
+                  />
+                </CardImg>
+                <CardBody>
+                  <div
+                    className="card-body"
+                  >
+                    <CardTitle>
+                      <ForwardRef
+                        className="card-title"
+                      >
+                        <div
+                          className="card-title h5"
+                        >
+                          Creative director
+                        </div>
+                      </ForwardRef>
+                    </CardTitle>
+                    <CardText>
+                      <p
+                        className="card-text"
+                      >
+                        Delaney
+                      </p>
+                    </CardText>
+                  </div>
+                </CardBody>
+              </div>
+            </Card>
+            <Card
+              body={false}
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div
+                className="card"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                <CardImg
+                  alt="No image"
+                  src="/images/cover.jpg"
+                  variant="top"
+                >
+                  <img
+                    alt="No image"
+                    className="card-img-top"
+                    src="/images/cover.jpg"
+                  />
+                </CardImg>
+                <CardBody>
+                  <div
+                    className="card-body"
+                  >
+                    <CardTitle>
+                      <ForwardRef
+                        className="card-title"
+                      >
+                        <div
+                          className="card-title h5"
+                        >
+                          No guarantees
+                        </div>
+                      </ForwardRef>
+                    </CardTitle>
+                    <CardText>
+                      <p
+                        className="card-text"
+                      >
+                        Kimberley
+                      </p>
+                    </CardText>
+                  </div>
+                </CardBody>
+              </div>
+            </Card>
+            <Card
+              body={false}
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div
+                className="card"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                <CardImg
+                  alt="No image"
+                  src="/images/cover.jpg"
+                  variant="top"
+                >
+                  <img
+                    alt="No image"
+                    className="card-img-top"
+                    src="/images/cover.jpg"
+                  />
+                </CardImg>
+                <CardBody>
+                  <div
+                    className="card-body"
+                  >
+                    <CardTitle>
+                      <ForwardRef
+                        className="card-title"
+                      >
+                        <div
+                          className="card-title h5"
+                        >
+                          Don't push this button
+                        </div>
+                      </ForwardRef>
+                    </CardTitle>
+                    <CardText>
+                      <p
+                        className="card-text"
+                      >
+                        Delaney
+                      </p>
+                    </CardText>
+                  </div>
+                </CardBody>
+              </div>
+            </Card>
+            <Card
+              body={false}
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div
+                className="card"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                <CardImg
+                  alt="No image"
+                  src="/images/cover.jpg"
+                  variant="top"
+                >
+                  <img
+                    alt="No image"
+                    className="card-img-top"
+                    src="/images/cover.jpg"
+                  />
+                </CardImg>
+                <CardBody>
+                  <div
+                    className="card-body"
+                  >
+                    <CardTitle>
+                      <ForwardRef
+                        className="card-title"
+                      >
+                        <div
+                          className="card-title h5"
+                        >
+                          Cherry
+                        </div>
+                      </ForwardRef>
+                    </CardTitle>
+                    <CardText>
+                      <p
+                        className="card-text"
+                      >
+                        Stacy
+                      </p>
+                    </CardText>
+                  </div>
+                </CardBody>
+              </div>
+            </Card>
+          </div>
+        </CardColumns>
+      </div>
+    </Albums>
+  </Connect(Albums)>
+</Provider>
 `;
